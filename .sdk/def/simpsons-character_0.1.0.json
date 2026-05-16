@@ -1,0 +1,505 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Simpsons Character API",
+    "description": "The Simpsons Character API provides detailed information about characters from The Simpsons universe, including their age, occupation, and famous quotes. It's designed for developers who want to create applications or services related to The Simpsons series. Access comprehensive data about characters, episodes, and locations from Springfield through RESTful API endpoints.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API Support",
+      "url": "https://thesimpsonsapi.com/"
+    },
+    "license": {
+      "name": "Creative Commons Attribution-ShareAlike License (CC BY-SA)",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://thesimpsonsapi.com/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/characters": {
+      "get": {
+        "summary": "Get all characters",
+        "description": "Retrieve a paginated list of characters from The Simpsons universe. Returns 20 characters per page.",
+        "operationId": "getCharacters",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination (20 items per page)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of characters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Character"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "age": 39,
+                    "birthdate": "1956-05-12",
+                    "gender": "Male",
+                    "name": "Homer Simpson",
+                    "occupation": "Safety Inspector",
+                    "portrait_path": "/character/1.webp",
+                    "phrases": [
+                      "Doh!",
+                      "Why you little...!",
+                      "Woo-hoo!"
+                    ],
+                    "status": "Alive"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/characters/{id}": {
+      "get": {
+        "summary": "Get character by ID",
+        "description": "Retrieve detailed information about a specific character by their unique ID, including age, occupation, phrases, and portrait image.",
+        "operationId": "getCharacterById",
+        "tags": [
+          "Characters"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the character",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with character details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Character"
+                },
+                "example": {
+                  "id": 1,
+                  "age": 39,
+                  "birthdate": "1956-05-12",
+                  "gender": "Male",
+                  "name": "Homer Simpson",
+                  "occupation": "Safety Inspector",
+                  "portrait_path": "/character/1.webp",
+                  "phrases": [
+                    "Doh!",
+                    "Why you little...!",
+                    "Woo-hoo!",
+                    "Mmm... (food)... *drooling*",
+                    "Stupid Flanders!",
+                    "Shut up Flanders!",
+                    "AAAAGHH!",
+                    "Lisa, knock off that racket!",
+                    "Uh oh, the boss.",
+                    "Lets all go out for frosty chocolate milkshakes!",
+                    "Whatever, Ill be at Moes.",
+                    "I am evil Ho-mer! I am evil Ho-mer! I am evil Ho-mer!",
+                    "Better them than me.",
+                    "Better them than me... Oh wait, that was me.",
+                    "Marge, my face hurts again!"
+                  ],
+                  "status": "Alive"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Character not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/episodes": {
+      "get": {
+        "summary": "Get all episodes",
+        "description": "Retrieve a paginated list of episodes from The Simpsons series. Returns 20 episodes per page with air dates, synopses, season information, and episode images.",
+        "operationId": "getEpisodes",
+        "tags": [
+          "Episodes"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination (20 items per page)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of episodes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Episode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/episodes/{id}": {
+      "get": {
+        "summary": "Get episode by ID",
+        "description": "Retrieve detailed information about a specific episode by its unique ID.",
+        "operationId": "getEpisodeById",
+        "tags": [
+          "Episodes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the episode",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with episode details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Episode"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Episode not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locations": {
+      "get": {
+        "summary": "Get all locations",
+        "description": "Retrieve a paginated list of locations from Springfield. Returns 20 locations per page including homes, businesses, and landmarks.",
+        "operationId": "getLocations",
+        "tags": [
+          "Locations"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination (20 items per page)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 1,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of locations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/locations/{id}": {
+      "get": {
+        "summary": "Get location by ID",
+        "description": "Retrieve detailed information about a specific location by its unique ID.",
+        "operationId": "getLocationById",
+        "tags": [
+          "Locations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the location",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with location details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Location not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Character": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the character",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the character",
+            "example": "Homer Simpson"
+          },
+          "age": {
+            "type": "integer",
+            "description": "Age of the character",
+            "example": 39,
+            "nullable": true
+          },
+          "birthdate": {
+            "type": "string",
+            "format": "date",
+            "description": "Birthdate of the character in YYYY-MM-DD format",
+            "example": "1956-05-12",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender of the character",
+            "example": "Male",
+            "enum": [
+              "Male",
+              "Female",
+              "Unknown"
+            ]
+          },
+          "occupation": {
+            "type": "string",
+            "description": "Occupation or job title of the character",
+            "example": "Safety Inspector",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status of the character",
+            "example": "Alive",
+            "enum": [
+              "Alive",
+              "Deceased",
+              "Unknown"
+            ]
+          },
+          "portrait_path": {
+            "type": "string",
+            "description": "Path to the character's portrait image (served via CDN)",
+            "example": "/character/1.webp"
+          },
+          "phrases": {
+            "type": "array",
+            "description": "Famous quotes and catchphrases of the character",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Doh!",
+              "Why you little...!",
+              "Woo-hoo!"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "Episode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the episode",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the episode",
+            "example": "Simpsons Roasting on an Open Fire"
+          },
+          "season": {
+            "type": "integer",
+            "description": "Season number",
+            "example": 1
+          },
+          "episode_number": {
+            "type": "integer",
+            "description": "Episode number within the season",
+            "example": 1
+          },
+          "air_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Original air date of the episode",
+            "example": "1989-12-17"
+          },
+          "synopsis": {
+            "type": "string",
+            "description": "Brief synopsis of the episode",
+            "nullable": true
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the episode image",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "title"
+        ]
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the location",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the location",
+            "example": "742 Evergreen Terrace"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of location (home, business, landmark, etc.)",
+            "example": "Home",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the location",
+            "nullable": true
+          },
+          "image_path": {
+            "type": "string",
+            "description": "Path to the location image",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Characters",
+      "description": "Operations related to Simpsons characters. Access detailed information about 1182+ characters including their age, occupation, phrases, and portrait images."
+    },
+    {
+      "name": "Episodes",
+      "description": "Operations related to Simpsons episodes. Access data for 768+ episodes including air dates, synopses, season information, and episode images."
+    },
+    {
+      "name": "Locations",
+      "description": "Operations related to Springfield locations. Explore 477+ iconic locations including homes, businesses, and landmarks."
+    }
+  ],
+  "externalDocs": {
+    "description": "Full API Documentation",
+    "url": "https://thesimpsonsapi.com/"
+  }
+}

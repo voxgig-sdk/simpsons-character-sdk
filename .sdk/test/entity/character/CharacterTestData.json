@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "character": {
+      "CHARACTER00": {
+        "age": "s5a",
+        "birthdate": "s5b",
+        "gender": "s5c",
+        "id": "CHARACTER00",
+        "name": "s5e",
+        "occupation": "s5f",
+        "phras": [],
+        "portrait_path": "s61",
+        "status": "s62"
+      },
+      "CHARACTER01": {
+        "age": "sb4",
+        "birthdate": "sb5",
+        "gender": "sb6",
+        "id": "CHARACTER01",
+        "name": "sb8",
+        "occupation": "sb9",
+        "phras": [],
+        "portrait_path": "sbb",
+        "status": "sbc"
+      },
+      "CHARACTER02": {
+        "age": "s10e",
+        "birthdate": "s10f",
+        "gender": "s110",
+        "id": "CHARACTER02",
+        "name": "s112",
+        "occupation": "s113",
+        "phras": [],
+        "portrait_path": "s115",
+        "status": "s116"
+      }
+    }
+  },
+  "new": {
+    "character": {
+      "character_ref01": {
+        "age": "s168",
+        "birthdate": "s169",
+        "gender": "s16a",
+        "name": "s16c",
+        "occupation": "s16d",
+        "phras": [],
+        "portrait_path": "s16f",
+        "status": "s170"
+      }
+    }
+  }
+}

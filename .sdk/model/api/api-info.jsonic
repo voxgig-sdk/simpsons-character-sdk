@@ -1,0 +1,28 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "API Support"
+        url: "https://thesimpsonsapi.com/"
+      }
+      description: "The Simpsons Character API provides detailed information about characters from The Simpsons universe, including their age, occupation, and famous quotes. It's designed for developers who want to create applications or services related to The Simpsons series. Access comprehensive data about characters, episodes, and locations from Springfield through RESTful API endpoints."
+      license: {
+        name: "Creative Commons Attribution-ShareAlike License (CC BY-SA)"
+        url: "https://creativecommons.org/licenses/by-sa/4.0/"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://thesimpsonsapi.com/api"
+        }
+      ]
+      title: "Simpsons Character API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

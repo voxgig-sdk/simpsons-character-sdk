@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "episode": {
+      "EPISODE00": {
+        "air_date": "s46",
+        "episode_number": "s47",
+        "id": "EPISODE00",
+        "image_path": "s49",
+        "season": "s4a",
+        "synopsi": "s4b",
+        "title": "s4c"
+      },
+      "EPISODE01": {
+        "air_date": "s8c",
+        "episode_number": "s8d",
+        "id": "EPISODE01",
+        "image_path": "s8f",
+        "season": "s90",
+        "synopsi": "s91",
+        "title": "s92"
+      },
+      "EPISODE02": {
+        "air_date": "sd2",
+        "episode_number": "sd3",
+        "id": "EPISODE02",
+        "image_path": "sd5",
+        "season": "sd6",
+        "synopsi": "sd7",
+        "title": "sd8"
+      }
+    }
+  },
+  "new": {
+    "episode": {
+      "episode_ref01": {
+        "air_date": "s118",
+        "episode_number": "s119",
+        "image_path": "s11b",
+        "season": "s11c",
+        "synopsi": "s11d",
+        "title": "s11e"
+      }
+    }
+  }
+}
