@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/simpsons-character-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/simpsons-character-sdk/core"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 )
 
 func transformRequestUtil(ctx *core.Context) any {

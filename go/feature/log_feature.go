@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/simpsons-character-sdk/core"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 )
 
 type LogFeature struct {

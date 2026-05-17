@@ -1,9 +1,4 @@
-module github.com/voxgig-sdk/simpsons-character-sdk
+module github.com/voxgig-sdk/simpsons-character-sdk/go
 
 go 1.20
 
-require (
-	github.com/voxgig/struct v0.0.0
-)
-
-replace github.com/voxgig/struct => ./utility/struct

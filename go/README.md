@@ -5,14 +5,14 @@ The Golang SDK for the SimpsonsCharacter API. Provides an entity-oriented interf
 
 ## Install
 ```bash
-go get github.com/voxgig-sdk/simpsons-character-sdk
+go get github.com/voxgig-sdk/simpsons-character-sdk/go
 ```
 
 If the module is not yet published to a registry, use a `replace` directive
 in your `go.mod` to point to a local checkout:
 
 ```bash
-go mod edit -replace github.com/voxgig-sdk/simpsons-character-sdk=../path/to/github.com/voxgig-sdk/simpsons-character-sdk
+go mod edit -replace github.com/voxgig-sdk/simpsons-character-sdk/go=../path/to/github.com/voxgig-sdk/simpsons-character-sdk/go
 ```
 
 
@@ -30,8 +30,8 @@ import (
     "fmt"
     "os"
 
-    sdk "github.com/voxgig-sdk/simpsons-character-sdk"
-    "github.com/voxgig-sdk/simpsons-character-sdk/core"
+    sdk "github.com/voxgig-sdk/simpsons-character-sdk/go"
+    "github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 )
 
 func main() {
@@ -249,7 +249,7 @@ On error, `"ok"` is `false` and `"err"` contains the error value.
 | `"id"` |  |
 | `"name"` |  |
 | `"occupation"` |  |
-| `"phras"` |  |
+| `"phrase"` |  |
 | `"portrait_path"` |  |
 | `"status"` |  |
 
@@ -313,7 +313,7 @@ Create an instance: `character := client.Character(nil)`
 | `id` | ``$INTEGER`` |  |
 | `name` | ``$STRING`` |  |
 | `occupation` | ``$STRING`` |  |
-| `phras` | ``$ARRAY`` |  |
+| `phrase` | ``$ARRAY`` |  |
 | `portrait_path` | ``$STRING`` |  |
 | `status` | ``$STRING`` |  |
 
@@ -450,7 +450,7 @@ Use `core.ToMapAny()` to safely cast results and nested data.
 ### Package structure
 
 ```
-github.com/voxgig-sdk/simpsons-character-sdk/
+github.com/voxgig-sdk/simpsons-character-sdk/go/
 ├── simpsons-character.go        # Root package — type aliases and constructors
 ├── core/               # SDK core — client, types, pipeline
 ├── entity/             # Entity implementations
@@ -459,7 +459,7 @@ github.com/voxgig-sdk/simpsons-character-sdk/
 └── test/               # Test suites
 ```
 
-The root package (`github.com/voxgig-sdk/simpsons-character-sdk`) re-exports everything needed
+The root package (`github.com/voxgig-sdk/simpsons-character-sdk/go`) re-exports everything needed
 for normal use. Import sub-packages only when you need specific types
 like `core.ToMapAny`.
 

@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/simpsons-character-sdk/go/utility/struct"
 )
 
 type SimpsonsCharacterSDK struct {

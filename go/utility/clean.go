@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/simpsons-character-sdk/core"
+import "github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 
 func cleanUtil(ctx *core.Context, val any) any {
 	return val

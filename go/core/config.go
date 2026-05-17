@@ -72,7 +72,7 @@ func MakeConfig() map[string]any {
 						"index$": 5,
 					},
 					map[string]any{
-						"name": "phras",
+						"name": "phrase",
 						"req": false,
 						"type": "`$ARRAY`",
 						"active": true,

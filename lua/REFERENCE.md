@@ -105,7 +105,7 @@ local character = client:Character(nil)
 | `id` | ``$INTEGER`` | Yes |  |
 | `name` | ``$STRING`` | Yes |  |
 | `occupation` | ``$STRING`` | No |  |
-| `phras` | ``$ARRAY`` | No |  |
+| `phrase` | ``$ARRAY`` | No |  |
 | `portrait_path` | ``$STRING`` | No |  |
 | `status` | ``$STRING`` | No |  |
 

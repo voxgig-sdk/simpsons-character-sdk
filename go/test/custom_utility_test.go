@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/simpsons-character-sdk"
+	sdk "github.com/voxgig-sdk/simpsons-character-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

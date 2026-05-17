@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/simpsons-character-sdk/core"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 )
 
 type BaseFeature struct {

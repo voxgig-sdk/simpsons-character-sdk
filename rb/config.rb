@@ -73,7 +73,7 @@ module SimpsonsCharacterConfig
               "index$" => 5,
             },
             {
-              "name" => "phras",
+              "name" => "phrase",
               "req" => false,
               "type" => "`$ARRAY`",
               "active" => true,

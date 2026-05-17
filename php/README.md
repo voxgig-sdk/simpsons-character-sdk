@@ -222,7 +222,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `id` |  |
 | `name` |  |
 | `occupation` |  |
-| `phras` |  |
+| `phrase` |  |
 | `portrait_path` |  |
 | `status` |  |
 
@@ -286,7 +286,7 @@ Create an instance: `const character = client.Character()`
 | `id` | ``$INTEGER`` |  |
 | `name` | ``$STRING`` |  |
 | `occupation` | ``$STRING`` |  |
-| `phras` | ``$ARRAY`` |  |
+| `phrase` | ``$ARRAY`` |  |
 | `portrait_path` | ``$STRING`` |  |
 | `status` | ``$STRING`` |  |
 

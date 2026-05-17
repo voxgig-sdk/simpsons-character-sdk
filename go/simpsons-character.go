@@ -1,10 +1,10 @@
 package voxgigsimpsonscharactersdk
 
 import (
-	"github.com/voxgig-sdk/simpsons-character-sdk/core"
-	"github.com/voxgig-sdk/simpsons-character-sdk/entity"
-	"github.com/voxgig-sdk/simpsons-character-sdk/feature"
-	_ "github.com/voxgig-sdk/simpsons-character-sdk/utility"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/core"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/entity"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/feature"
+	_ "github.com/voxgig-sdk/simpsons-character-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

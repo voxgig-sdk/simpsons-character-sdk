@@ -73,7 +73,7 @@ def make_config():
             "index$": 5,
           },
           {
-            "name": "phras",
+            "name": "phrase",
             "req": False,
             "type": "`$ARRAY`",
             "active": True,

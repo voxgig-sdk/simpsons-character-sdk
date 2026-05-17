@@ -36,7 +36,7 @@ main: kit: entity: character: {
       type: "`$STRING`"
     }
     {
-      name: "phras"
+      name: "phrase"
       req: false
       type: "`$ARRAY`"
     }

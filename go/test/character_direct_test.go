@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/simpsons-character-sdk"
-	"github.com/voxgig-sdk/simpsons-character-sdk/core"
+	sdk "github.com/voxgig-sdk/simpsons-character-sdk/go"
+	"github.com/voxgig-sdk/simpsons-character-sdk/go/core"
 )
 
 func TestCharacterDirect(t *testing.T) {
