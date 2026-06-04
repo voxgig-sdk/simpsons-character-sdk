@@ -109,14 +109,12 @@ def _location_direct_setup(mockres):
     env = runner.env_override({
         "SIMPSONSCHARACTER_TEST_LOCATION_ENTID": {},
         "SIMPSONSCHARACTER_TEST_LIVE": "FALSE",
-        "SIMPSONSCHARACTER_APIKEY": "NONE",
     })
 
     live = env.get("SIMPSONSCHARACTER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("SIMPSONSCHARACTER_APIKEY"),
         }
         client = SimpsonsCharacterSDK(merged_opts)
         return {

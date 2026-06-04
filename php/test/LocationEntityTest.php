@@ -96,7 +96,6 @@ function location_basic_setup($extra)
         "SIMPSONSCHARACTER_TEST_LOCATION_ENTID" => $idmap,
         "SIMPSONSCHARACTER_TEST_LIVE" => "FALSE",
         "SIMPSONSCHARACTER_TEST_EXPLAIN" => "FALSE",
-        "SIMPSONSCHARACTER_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -108,7 +107,6 @@ function location_basic_setup($extra)
     if ($env["SIMPSONSCHARACTER_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["SIMPSONSCHARACTER_APIKEY"],
             ],
             $extra ?? [],
         ]);

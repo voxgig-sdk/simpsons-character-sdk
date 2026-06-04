@@ -15,9 +15,6 @@ module SimpsonsCharacterConfig
       },
       "options" => {
         "base" => "https://thesimpsonsapi.com/api",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

@@ -21,8 +21,30 @@ main: {
       ]
       title: "Simpsons Character API"
       version: "1.0.0"
+      tagline: "Browse characters, episodes, and Springfield locations from The Simpsons universe over a simple REST API"
+      homepage: "https://thesimpsonsapi.com/"
+      docs_url: "https://thesimpsonsapi.com/"
+      license_short: "Data sourced from The Simpsons Wiki under CC BY-SA (Creative Commons Attribution-ShareAlike)."
+      license_md: `- Underlying data is sourced from The Simpsons Wiki and is licensed under the **Creative Commons Attribution-ShareAlike License (CC BY-SA)**.
+- If you redistribute or build on the data, give attribution and share derivative works under the same licence.
+- The Simpsons names, characters, and related marks are property of their respective owners; this is an unofficial fan project.
+- Check the [project homepage](https://thesimpsonsapi.com/) for the latest licence details before commercial use.`
+      about_md: `The Simpsons API is an unofficial RESTful API for the Simpsons universe, built and maintained by [Facundo Gonza (FacuG03)](https://github.com/Facug03/the-simpsons-api). It exposes data drawn from The Simpsons Wiki for use in fan projects, demos, and tutorials.
+
+What you get from the API:
+
+- **Characters** (1,100+) — name, age, birthdate, gender, occupation, status, famous phrases, and a portrait image path.
+- **Episodes** (700+) — episode records from the show's run.
+- **Locations** (470+) — places in and around Springfield.
+- **Images** — character portraits served via the project's CDN.
+
+The API is open and requires no authentication or API key. Responses are JSON and list endpoints are paginated at 20 items per page. Service health and uptime can be checked at [status.thesimpsonsapi.com](https://status.thesimpsonsapi.com/), and the source code lives on [GitHub](https://github.com/Facug03/the-simpsons-api).`
+      entity_desc: {
+        character: "A figure from The Simpsons universe with fields such as name, age, birthdate, gender, occupation, status, famous phrases, and portrait — served from `/api/characters`."
+        episode: "An episode record from the show's catalogue — served from `/api/episodes`."
+        location: "A place in or around Springfield that appears in the show — served from `/api/locations`."
+      }
+      auth: false
     }
   }
-}
-
 }
