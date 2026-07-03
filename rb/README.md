@@ -10,13 +10,13 @@ The Ruby SDK for the SimpsonsCharacter API — an entity-oriented client using i
 
 ## Install
 ```bash
-gem install simpsons-character-sdk
+gem install voxgig-sdk-simpsons-character
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "simpsons-character-sdk"
+gem "voxgig-sdk-simpsons-character"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The PHP SDK for the SimpsonsCharacter API — an entity-oriented client using PH
 
 ## Install
 ```bash
-composer require voxgig/simpsons-character-sdk
+composer require voxgig-sdk/simpsons-character
 ```
 
 

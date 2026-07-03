@@ -10,7 +10,7 @@ The TypeScript SDK for the SimpsonsCharacter API — a type-safe, entity-oriente
 
 ## Install
 ```bash
-npm install simpsons-character
+npm install @voxgig-sdk/simpsons-character
 ```
 ## Tutorial: your first API call
 

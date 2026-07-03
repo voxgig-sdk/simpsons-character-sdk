@@ -10,7 +10,7 @@ The Python SDK for the SimpsonsCharacter API — an entity-oriented client follo
 
 ## Install
 ```bash
-pip install simpsons-character-sdk
+pip install voxgig-sdk-simpsons-character
 ```
 
 Or install from source:

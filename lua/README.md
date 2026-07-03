@@ -10,7 +10,7 @@ The Lua SDK for the SimpsonsCharacter API — an entity-oriented client using Lu
 
 ## Install
 ```bash
-luarocks install simpsons-character-sdk
+luarocks install voxgig-sdk-simpsons-character
 ```
 
 If the module is not yet published, add the source directory to
