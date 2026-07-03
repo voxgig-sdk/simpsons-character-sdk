@@ -175,12 +175,14 @@ func characterDirectSetup(mockres any) *characterDirectSetupResult {
 	env := envOverride(map[string]any{
 		"SIMPSONSCHARACTER_TEST_CHARACTER_ENTID": map[string]any{},
 		"SIMPSONSCHARACTER_TEST_LIVE":    "FALSE",
+		"SIMPSONSCHARACTER_APIKEY":       "NONE",
 	})
 
 	live := env["SIMPSONSCHARACTER_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["SIMPSONSCHARACTER_APIKEY"],
 		}
 		client := sdk.NewSimpsonsCharacterSDK(mergedOpts)
 

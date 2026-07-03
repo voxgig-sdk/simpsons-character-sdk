@@ -120,6 +120,7 @@ function basicSetup(extra?: any) {
     'SIMPSONS_CHARACTER_TEST_LOCATION_ENTID': idmap,
     'SIMPSONS_CHARACTER_TEST_LIVE': 'FALSE',
     'SIMPSONS_CHARACTER_TEST_EXPLAIN': 'FALSE',
+    'SIMPSONS_CHARACTER_APIKEY': 'NONE',
   })
 
   idmap = env['SIMPSONS_CHARACTER_TEST_LOCATION_ENTID']
@@ -129,6 +130,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new SimpsonsCharacterSDK(merge([
       {
+        apikey: env.SIMPSONS_CHARACTER_APIKEY,
       },
       extra
     ]))

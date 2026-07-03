@@ -115,12 +115,14 @@ function character_direct_setup(mockres)
   local env = runner.env_override({
     ["SIMPSONSCHARACTER_TEST_CHARACTER_ENTID"] = {},
     ["SIMPSONSCHARACTER_TEST_LIVE"] = "FALSE",
+    ["SIMPSONSCHARACTER_APIKEY"] = "NONE",
   })
 
   local live = env["SIMPSONSCHARACTER_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["SIMPSONSCHARACTER_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

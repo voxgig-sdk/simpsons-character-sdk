@@ -136,12 +136,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'SIMPSONSCHARACTER_TEST_LOCATION_ENTID': {},
     'SIMPSONSCHARACTER_TEST_LIVE': 'FALSE',
+    'SIMPSONSCHARACTER_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.SIMPSONSCHARACTER_TEST_LIVE
 
   if (live) {
     const client = new SimpsonsCharacterSDK({
+      apikey: env.SIMPSONSCHARACTER_APIKEY,
     })
 
     let idmap: any = env['SIMPSONSCHARACTER_TEST_LOCATION_ENTID']

@@ -102,6 +102,7 @@ function episode_basic_setup(extra)
     ["SIMPSONSCHARACTER_TEST_EPISODE_ENTID"] = idmap,
     ["SIMPSONSCHARACTER_TEST_LIVE"] = "FALSE",
     ["SIMPSONSCHARACTER_TEST_EXPLAIN"] = "FALSE",
+    ["SIMPSONSCHARACTER_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -113,6 +114,7 @@ function episode_basic_setup(extra)
   if env["SIMPSONSCHARACTER_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["SIMPSONSCHARACTER_APIKEY"],
       },
       extra or {},
     })

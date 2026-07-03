@@ -116,12 +116,14 @@ def episode_direct_setup(mockres)
   env = Runner.env_override({
     "SIMPSONSCHARACTER_TEST_EPISODE_ENTID" => {},
     "SIMPSONSCHARACTER_TEST_LIVE" => "FALSE",
+    "SIMPSONSCHARACTER_APIKEY" => "NONE",
   })
 
   live = env["SIMPSONSCHARACTER_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["SIMPSONSCHARACTER_APIKEY"],
     }
     client = SimpsonsCharacterSDK.new(merged_opts)
     return {

@@ -1,21 +1,8 @@
 # SimpsonsCharacter SDK
 
-Browse characters, episodes, and Springfield locations from The Simpsons universe over a simple REST API
+Simpsons Character API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Simpsons Character API
-
-The Simpsons API is an unofficial RESTful API for the Simpsons universe, built and maintained by [Facundo Gonza (FacuG03)](https://github.com/Facug03/the-simpsons-api). It exposes data drawn from The Simpsons Wiki for use in fan projects, demos, and tutorials.
-
-What you get from the API:
-
-- **Characters** (1,100+) — name, age, birthdate, gender, occupation, status, famous phrases, and a portrait image path.
-- **Episodes** (700+) — episode records from the show's run.
-- **Locations** (470+) — places in and around Springfield.
-- **Images** — character portraits served via the project's CDN.
-
-The API is open and requires no authentication or API key. Responses are JSON and list endpoints are paginated at 20 items per page. Service health and uptime can be checked at [status.thesimpsonsapi.com](https://status.thesimpsonsapi.com/), and the source code lives on [GitHub](https://github.com/Facug03/the-simpsons-api).
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install simpsons-character-sdk
 luarocks install simpsons-character-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { SimpsonsCharacterSDK } from 'simpsons-character'
 
-const client = new SimpsonsCharacterSDK({})
+const client = new SimpsonsCharacterSDK({
+  apikey: process.env.SIMPSONS-CHARACTER_APIKEY,
+})
 
 // List all characters
 const characters = await client.Character().list()
+console.log(characters.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,9 +90,9 @@ The API exposes 3 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Character** | A figure from The Simpsons universe with fields such as name, age, birthdate, gender, occupation, status, famous phrases, and portrait — served from `/api/characters`. | `/characters` |
-| **Episode** | An episode record from the show's catalogue — served from `/api/episodes`. | `/episodes` |
-| **Location** | A place in or around Springfield that appears in the show — served from `/api/locations`. | `/locations` |
+| **Character** |  | `/characters` |
+| **Episode** |  | `/episodes` |
+| **Location** |  | `/locations` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -113,17 +102,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from simpsonscharacter_sdk import SimpsonsCharacterSDK
 
-client = SimpsonsCharacterSDK({})
+client = SimpsonsCharacterSDK({
+    "apikey": os.environ.get("SIMPSONS-CHARACTER_APIKEY"),
+})
 
 # List all characters
-characters, err = client.Character(None).list(None, None)
+characters, err = client.Character().list()
+print(characters)
 
 # Load a specific character
-character, err = client.Character(None).load(
-    {"id": "example_id"}, None
-)
+character, err = client.Character().load({"id": "example_id"})
+print(character)
 ```
 
 ### PHP
@@ -132,15 +124,17 @@ character, err = client.Character(None).load(
 <?php
 require_once 'simpsonscharacter_sdk.php';
 
-$client = new SimpsonsCharacterSDK([]);
+$client = new SimpsonsCharacterSDK([
+    "apikey" => getenv("SIMPSONS-CHARACTER_APIKEY"),
+]);
 
 // List all characters
-[$characters, $err] = $client->Character(null)->list(null, null);
+[$characters, $err] = $client->Character()->list();
+print_r($characters);
 
 // Load a specific character
-[$character, $err] = $client->Character(null)->load(
-    ["id" => "example_id"], null
-);
+[$character, $err] = $client->Character()->load(["id" => "example_id"]);
+print_r($character);
 ```
 
 ### Golang
@@ -148,10 +142,13 @@ $client = new SimpsonsCharacterSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/simpsons-character-sdk/go"
 
-client := sdk.NewSimpsonsCharacterSDK(map[string]any{})
+client := sdk.NewSimpsonsCharacterSDK(map[string]any{
+    "apikey": os.Getenv("SIMPSONS-CHARACTER_APIKEY"),
+})
 
 // List all characters
 characters, err := client.Character(nil).List(nil, nil)
+fmt.Println(characters)
 ```
 
 ### Ruby
@@ -159,15 +156,17 @@ characters, err := client.Character(nil).List(nil, nil)
 ```ruby
 require_relative "SimpsonsCharacter_sdk"
 
-client = SimpsonsCharacterSDK.new({})
+client = SimpsonsCharacterSDK.new({
+  "apikey" => ENV["SIMPSONS-CHARACTER_APIKEY"],
+})
 
 # List all characters
-characters, err = client.Character(nil).list(nil, nil)
+characters, err = client.Character().list
+puts characters
 
 # Load a specific character
-character, err = client.Character(nil).load(
-  { "id" => "example_id" }, nil
-)
+character, err = client.Character().load({ "id" => "example_id" })
+puts character
 ```
 
 ### Lua
@@ -175,15 +174,17 @@ character, err = client.Character(nil).load(
 ```lua
 local sdk = require("simpsons-character_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("SIMPSONS-CHARACTER_APIKEY"),
+})
 
 -- List all characters
-local characters, err = client:Character(nil):list(nil, nil)
+local characters, err = client:Character():list()
+print(characters)
 
 -- Load a specific character
-local character, err = client:Character(nil):load(
-  { id = "example_id" }, nil
-)
+local character, err = client:Character():load({ id = "example_id" })
+print(character)
 ```
 
 ## Unit testing in offline mode
@@ -202,25 +203,21 @@ const result = await client.Character().load({ id: 'test01' })
 ### Python
 
 ```python
-client = SimpsonsCharacterSDK.test(None, None)
-result, err = client.Character(None).load(
-    {"id": "test01"}, None
-)
+client = SimpsonsCharacterSDK.test()
+result, err = client.Character().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = SimpsonsCharacterSDK::test(null, null);
-[$result, $err] = $client->Character(null)->load(
-    ["id" => "test01"], null
-);
+$client = SimpsonsCharacterSDK::test();
+[$result, $err] = $client->Character()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Character(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -229,19 +226,15 @@ result, err := client.Character(nil).Load(
 ### Ruby
 
 ```ruby
-client = SimpsonsCharacterSDK.test(nil, nil)
-result, err = client.Character(nil).load(
-  { "id" => "test01" }, nil
-)
+client = SimpsonsCharacterSDK.test
+result, err = client.Character().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Character(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Character():load({ id = "test01" })
 ```
 
 ## How it works
@@ -345,15 +338,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Simpsons Character API
-
-- Upstream: [https://thesimpsonsapi.com/](https://thesimpsonsapi.com/)
-
-- Underlying data is sourced from The Simpsons Wiki and is licensed under the **Creative Commons Attribution-ShareAlike License (CC BY-SA)**.
-- If you redistribute or build on the data, give attribution and share derivative works under the same licence.
-- The Simpsons names, characters, and related marks are property of their respective owners; this is an unofficial fan project.
-- Check the [project homepage](https://thesimpsonsapi.com/) for the latest licence details before commercial use.
 
 ---
 
