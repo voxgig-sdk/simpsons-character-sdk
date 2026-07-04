@@ -245,16 +245,25 @@ func (sdk *SimpsonsCharacterSDK) Direct(fetchargs map[string]any) (map[string]an
 }
 
 
+// Character returns a Character entity bound to this client.
+// Idiomatic usage: client.Character(nil).List(nil, nil) or
+// client.Character(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *SimpsonsCharacterSDK) Character(data map[string]any) SimpsonsCharacterEntity {
 	return NewCharacterEntityFunc(sdk, data)
 }
 
 
+// Episode returns a Episode entity bound to this client.
+// Idiomatic usage: client.Episode(nil).List(nil, nil) or
+// client.Episode(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *SimpsonsCharacterSDK) Episode(data map[string]any) SimpsonsCharacterEntity {
 	return NewEpisodeEntityFunc(sdk, data)
 }
 
 
+// Location returns a Location entity bound to this client.
+// Idiomatic usage: client.Location(nil).List(nil, nil) or
+// client.Location(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *SimpsonsCharacterSDK) Location(data map[string]any) SimpsonsCharacterEntity {
 	return NewLocationEntityFunc(sdk, data)
 }

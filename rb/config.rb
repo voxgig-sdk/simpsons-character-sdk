@@ -15,9 +15,6 @@ module SimpsonsCharacterConfig
       },
       "options" => {
         "base" => "https://thesimpsonsapi.com/api",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -150,6 +147,7 @@ module SimpsonsCharacterConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },
@@ -285,6 +283,7 @@ module SimpsonsCharacterConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },
@@ -406,6 +405,7 @@ module SimpsonsCharacterConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$INTEGER`",
+                        "index$" => 0,
                       },
                     ],
                   },

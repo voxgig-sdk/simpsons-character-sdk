@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -134,7 +133,7 @@ Alias for `SimpsonsCharacterSDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.Character()
+const character = client.character
 ```
 
 ### Fields
@@ -158,7 +157,7 @@ const character = client.Character()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Character().list()
+const results = await client.character.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -166,7 +165,7 @@ const results = await client.Character().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Character().load({ id: 'character_id' })
+const result = await client.character.load({ id: 'character_id' })
 ```
 
 ### Common Methods
@@ -200,7 +199,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.Episode()
+const episode = client.episode
 ```
 
 ### Fields
@@ -222,7 +221,7 @@ const episode = client.Episode()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Episode().list()
+const results = await client.episode.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -230,7 +229,7 @@ const results = await client.Episode().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Episode().load({ id: 'episode_id' })
+const result = await client.episode.load({ id: 'episode_id' })
 ```
 
 ### Common Methods
@@ -264,7 +263,7 @@ Return a copy of the entity options.
 ## LocationEntity
 
 ```ts
-const location = client.Location()
+const location = client.location
 ```
 
 ### Fields
@@ -284,7 +283,7 @@ const location = client.Location()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Location().list()
+const results = await client.location.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -292,7 +291,7 @@ const results = await client.Location().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Location().load({ id: 'location_id' })
+const result = await client.location.load({ id: 'location_id' })
 ```
 
 ### Common Methods

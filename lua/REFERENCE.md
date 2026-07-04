@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -92,7 +91,7 @@ same parameters as `direct()`.
 ## CharacterEntity
 
 ```lua
-local character = client:Character(nil)
+local character = client:character(nil)
 ```
 
 ### Fields
@@ -116,7 +115,7 @@ local character = client:Character(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Character():list()
+local results, err = client:character():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -124,7 +123,7 @@ local results, err = client:Character():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Character():load({ id = "character_id" })
+local result, err = client:character():load({ id = "character_id" })
 ```
 
 ### Common Methods
@@ -160,7 +159,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```lua
-local episode = client:Episode(nil)
+local episode = client:episode(nil)
 ```
 
 ### Fields
@@ -182,7 +181,7 @@ local episode = client:Episode(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Episode():list()
+local results, err = client:episode():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -190,7 +189,7 @@ local results, err = client:Episode():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Episode():load({ id = "episode_id" })
+local result, err = client:episode():load({ id = "episode_id" })
 ```
 
 ### Common Methods
@@ -226,7 +225,7 @@ Return the entity name.
 ## LocationEntity
 
 ```lua
-local location = client:Location(nil)
+local location = client:location(nil)
 ```
 
 ### Fields
@@ -246,7 +245,7 @@ local location = client:Location(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Location():list()
+local results, err = client:location():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -254,7 +253,7 @@ local results, err = client:Location():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Location():load({ id = "location_id" })
+local result, err = client:location():load({ id = "location_id" })
 ```
 
 ### Common Methods
