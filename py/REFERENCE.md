@@ -88,7 +88,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CharacterEntity
 
 ```python
-character = client.character
+character = client.Character()
 ```
 
 ### Fields
@@ -112,7 +112,9 @@ character = client.character
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.character.list({})
+results = client.Character().list({})
+for character in results:
+    print(character)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -120,7 +122,7 @@ results = client.character.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.character.load({"id": "character_id"})
+result = client.Character().load({"id": "character_id"})
 ```
 
 ### Common Methods
@@ -155,7 +157,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```python
-episode = client.episode
+episode = client.Episode()
 ```
 
 ### Fields
@@ -177,7 +179,9 @@ episode = client.episode
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.episode.list({})
+results = client.Episode().list({})
+for episode in results:
+    print(episode)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -185,7 +189,7 @@ results = client.episode.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.episode.load({"id": "episode_id"})
+result = client.Episode().load({"id": "episode_id"})
 ```
 
 ### Common Methods
@@ -220,7 +224,7 @@ Return the entity name.
 ## LocationEntity
 
 ```python
-location = client.location
+location = client.Location()
 ```
 
 ### Fields
@@ -240,7 +244,9 @@ location = client.location
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.location.list({})
+results = client.Location().list({})
+for location in results:
+    print(location)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -248,7 +254,7 @@ results = client.location.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.location.load({"id": "location_id"})
+result = client.Location().load({"id": "location_id"})
 ```
 
 ### Common Methods
