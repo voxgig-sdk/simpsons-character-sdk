@@ -140,15 +140,15 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | ``$INTEGER`` | No |  |
-| `birthdate` | ``$STRING`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `occupation` | ``$STRING`` | No |  |
-| `phrase` | ``$ARRAY`` | No |  |
-| `portrait_path` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `age` | `number` | No |  |
+| `birthdate` | `string` | No |  |
+| `gender` | `string` | No |  |
+| `id` | `number` | Yes |  |
+| `name` | `string` | Yes |  |
+| `occupation` | `string` | No |  |
+| `phrase` | `any[]` | No |  |
+| `portrait_path` | `string` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -165,7 +165,7 @@ const results = await client.Character().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Character().load({ id: 'character_id' })
+const result = await client.Character().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -206,13 +206,13 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `synopsi` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `air_date` | `string` | No |  |
+| `episode_number` | `number` | No |  |
+| `id` | `number` | Yes |  |
+| `image_path` | `string` | No |  |
+| `season` | `number` | No |  |
+| `synopsi` | `string` | No |  |
+| `title` | `string` | Yes |  |
 
 ### Operations
 
@@ -229,7 +229,7 @@ const results = await client.Episode().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Episode().load({ id: 'episode_id' })
+const result = await client.Episode().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -270,11 +270,11 @@ const location = client.Location()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `number` | Yes |  |
+| `image_path` | `string` | No |  |
+| `name` | `string` | Yes |  |
+| `type` | `string` | No |  |
 
 ### Operations
 
@@ -291,7 +291,7 @@ const results = await client.Location().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Location().load({ id: 'location_id' })
+const result = await client.Location().load({ id: 1 })
 ```
 
 ### Common Methods

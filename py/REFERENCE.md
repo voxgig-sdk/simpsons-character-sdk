@@ -8,7 +8,7 @@ Complete API reference for the SimpsonsCharacter Python SDK.
 ### Constructor
 
 ```python
-from simpsons-character_sdk import SimpsonsCharacterSDK
+from simpsonscharacter_sdk import SimpsonsCharacterSDK
 
 client = SimpsonsCharacterSDK(options)
 ```
@@ -95,24 +95,24 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | ``$INTEGER`` | No |  |
-| `birthdate` | ``$STRING`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `occupation` | ``$STRING`` | No |  |
-| `phrase` | ``$ARRAY`` | No |  |
-| `portrait_path` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `age` | `int` | No |  |
+| `birthdate` | `str` | No |  |
+| `gender` | `str` | No |  |
+| `id` | `int` | Yes |  |
+| `name` | `str` | Yes |  |
+| `occupation` | `str` | No |  |
+| `phrase` | `list` | No |  |
+| `portrait_path` | `str` | No |  |
+| `status` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Character().list({})
+results = client.Character().list()
 for character in results:
     print(character)
 ```
@@ -164,22 +164,22 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `synopsi` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `air_date` | `str` | No |  |
+| `episode_number` | `int` | No |  |
+| `id` | `int` | Yes |  |
+| `image_path` | `str` | No |  |
+| `season` | `int` | No |  |
+| `synopsi` | `str` | No |  |
+| `title` | `str` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Episode().list({})
+results = client.Episode().list()
 for episode in results:
     print(episode)
 ```
@@ -231,20 +231,20 @@ location = client.Location()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `id` | `int` | Yes |  |
+| `image_path` | `str` | No |  |
+| `name` | `str` | Yes |  |
+| `type` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Location().list({})
+results = client.Location().list()
 for location in results:
     print(location)
 ```

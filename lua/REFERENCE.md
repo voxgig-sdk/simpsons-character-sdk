@@ -98,15 +98,15 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | ``$INTEGER`` | No |  |
-| `birthdate` | ``$STRING`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `occupation` | ``$STRING`` | No |  |
-| `phrase` | ``$ARRAY`` | No |  |
-| `portrait_path` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `age` | `number` | No |  |
+| `birthdate` | `string` | No |  |
+| `gender` | `string` | No |  |
+| `id` | `number` | Yes |  |
+| `name` | `string` | Yes |  |
+| `occupation` | `string` | No |  |
+| `phrase` | `table` | No |  |
+| `portrait_path` | `string` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -166,13 +166,13 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `synopsi` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `air_date` | `string` | No |  |
+| `episode_number` | `number` | No |  |
+| `id` | `number` | Yes |  |
+| `image_path` | `string` | No |  |
+| `season` | `number` | No |  |
+| `synopsi` | `string` | No |  |
+| `title` | `string` | Yes |  |
 
 ### Operations
 
@@ -232,11 +232,11 @@ local location = client:Location(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `number` | Yes |  |
+| `image_path` | `string` | No |  |
+| `name` | `string` | Yes |  |
+| `type` | `string` | No |  |
 
 ### Operations
 

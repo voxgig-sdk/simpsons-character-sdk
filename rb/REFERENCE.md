@@ -8,7 +8,7 @@ Complete API reference for the SimpsonsCharacter Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'simpsons-character_sdk'
+require_relative 'SimpsonsCharacter_sdk'
 
 client = SimpsonsCharacterSDK.new(options)
 ```
@@ -101,24 +101,24 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | ``$INTEGER`` | No |  |
-| `birthdate` | ``$STRING`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `occupation` | ``$STRING`` | No |  |
-| `phrase` | ``$ARRAY`` | No |  |
-| `portrait_path` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `age` | `Integer` | No |  |
+| `birthdate` | `String` | No |  |
+| `gender` | `String` | No |  |
+| `id` | `Integer` | Yes |  |
+| `name` | `String` | Yes |  |
+| `occupation` | `String` | No |  |
+| `phrase` | `Array` | No |  |
+| `portrait_path` | `String` | No |  |
+| `status` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Character.list(nil)
+results = client.Character.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -169,22 +169,22 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | ``$STRING`` | No |  |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `season` | ``$INTEGER`` | No |  |
-| `synopsi` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `air_date` | `String` | No |  |
+| `episode_number` | `Integer` | No |  |
+| `id` | `Integer` | Yes |  |
+| `image_path` | `String` | No |  |
+| `season` | `Integer` | No |  |
+| `synopsi` | `String` | No |  |
+| `title` | `String` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Episode.list(nil)
+results = client.Episode.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -235,20 +235,20 @@ location = client.Location
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | Yes |  |
-| `image_path` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | Yes |  |
-| `type` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `id` | `Integer` | Yes |  |
+| `image_path` | `String` | No |  |
+| `name` | `String` | Yes |  |
+| `type` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Location.list(nil)
+results = client.Location.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
