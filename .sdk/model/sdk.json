@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -670,14 +667,17 @@
           "name": "Creative Commons Attribution-ShareAlike License (CC BY-SA)",
           "url": "https://creativecommons.org/licenses/by-sa/4.0/"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://thesimpsonsapi.com/api"
           }
         ],
+        "summary": "The Simpsons Character API provides detailed information about characters from The Simpsons universe, including their age, occupation, and famous quotes.",
         "title": "Simpsons Character API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://thesimpsonsapi.com/"
       },
       "option": {},
       "target": {
@@ -730,6 +730,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -780,6 +783,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

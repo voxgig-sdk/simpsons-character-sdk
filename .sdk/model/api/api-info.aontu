@@ -20,9 +20,9 @@ main: {
           url: "https://thesimpsonsapi.com/api"
         }
       ]
+      summary: "The Simpsons Character API provides detailed information about characters from The Simpsons universe, including their age, occupation, and famous quotes."
       title: "Simpsons Character API"
       version: "1.0.0"
+      website: "https://thesimpsonsapi.com/"
     }
   }
-}
-
