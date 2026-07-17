@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- SimpsonsCharacter SDK exists test
 
 local sdk = require("simpsons-character_sdk")
 
