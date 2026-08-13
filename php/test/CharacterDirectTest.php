@@ -119,11 +119,11 @@ function character_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "SIMPSONSCHARACTER_TEST_CHARACTER_ENTID" => [],
-        "SIMPSONSCHARACTER_TEST_LIVE" => "FALSE",
+        "SIMPSONS_CHARACTER_TEST_CHARACTER_ENTID" => [],
+        "SIMPSONS_CHARACTER_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["SIMPSONSCHARACTER_TEST_LIVE"] === "TRUE";
+    $live = $env["SIMPSONS_CHARACTER_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

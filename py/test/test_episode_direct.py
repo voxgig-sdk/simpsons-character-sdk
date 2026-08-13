@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from simpsonscharacter_sdk.utility.voxgig_struct import voxgig_struct as vs
 from simpsonscharacter_sdk import SimpsonsCharacterSDK
-from core import helpers
+from simpsonscharacter_sdk.core import helpers
 from test import runner
 
 
@@ -105,11 +105,11 @@ def _episode_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "SIMPSONSCHARACTER_TEST_EPISODE_ENTID": {},
-        "SIMPSONSCHARACTER_TEST_LIVE": "FALSE",
+        "SIMPSONS_CHARACTER_TEST_EPISODE_ENTID": {},
+        "SIMPSONS_CHARACTER_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("SIMPSONSCHARACTER_TEST_LIVE") == "TRUE"
+    live = env.get("SIMPSONS_CHARACTER_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

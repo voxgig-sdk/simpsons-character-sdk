@@ -146,7 +146,7 @@ const character = client.Character()
 | `id` | `number` | Yes |  |
 | `name` | `string` | Yes |  |
 | `occupation` | `string` | No |  |
-| `phrase` | `any[]` | No |  |
+| `phrases` | `any[]` | No |  |
 | `portrait_path` | `string` | No |  |
 | `status` | `string` | No |  |
 
@@ -211,7 +211,7 @@ const episode = client.Episode()
 | `id` | `number` | Yes |  |
 | `image_path` | `string` | No |  |
 | `season` | `number` | No |  |
-| `synopsi` | `string` | No |  |
+| `synopsis` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

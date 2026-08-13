@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ SimpsonsCharacterUtility.registrar = ->(u) {
   u.prepare_params = SimpsonsCharacterUtilities::PrepareParams
   u.prepare_path = SimpsonsCharacterUtilities::PreparePath
   u.prepare_query = SimpsonsCharacterUtilities::PrepareQuery
+  u.graphql_body = SimpsonsCharacterUtilities::GraphqlBody
+  u.graphql_errors = SimpsonsCharacterUtilities::GraphqlErrors
   u.result_basic = SimpsonsCharacterUtilities::ResultBasic
   u.result_body = SimpsonsCharacterUtilities::ResultBody
   u.result_headers = SimpsonsCharacterUtilities::ResultHeaders

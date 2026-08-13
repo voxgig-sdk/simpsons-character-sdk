@@ -121,11 +121,11 @@ function episode_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "SIMPSONSCHARACTER_TEST_EPISODE_ENTID" => [],
-        "SIMPSONSCHARACTER_TEST_LIVE" => "FALSE",
+        "SIMPSONS_CHARACTER_TEST_EPISODE_ENTID" => [],
+        "SIMPSONS_CHARACTER_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["SIMPSONSCHARACTER_TEST_LIVE"] === "TRUE";
+    $live = $env["SIMPSONS_CHARACTER_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

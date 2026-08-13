@@ -104,7 +104,7 @@ local character = client:Character(nil)
 | `id` | `number` | Yes |  |
 | `name` | `string` | Yes |  |
 | `occupation` | `string` | No |  |
-| `phrase` | `table` | No |  |
+| `phrases` | `table` | No |  |
 | `portrait_path` | `string` | No |  |
 | `status` | `string` | No |  |
 
@@ -171,7 +171,7 @@ local episode = client:Episode(nil)
 | `id` | `number` | Yes |  |
 | `image_path` | `string` | No |  |
 | `season` | `number` | No |  |
-| `synopsi` | `string` | No |  |
+| `synopsis` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

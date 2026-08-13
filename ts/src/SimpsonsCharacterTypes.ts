@@ -12,7 +12,7 @@ export interface Character {
   id: number
   name: string
   occupation?: string
-  phrase?: any[]
+  phrases?: any[]
   portrait_path?: string
   status?: string
 }
@@ -28,7 +28,7 @@ export interface CharacterListMatch {
   id?: number
   name?: string
   occupation?: string
-  phrase?: any[]
+  phrases?: any[]
   portrait_path?: string
   status?: string
 }
@@ -39,7 +39,7 @@ export interface Episode {
   id: number
   image_path?: string
   season?: number
-  synopsi?: string
+  synopsis?: string
   title: string
 }
 
@@ -53,7 +53,7 @@ export interface EpisodeListMatch {
   id?: number
   image_path?: string
   season?: number
-  synopsi?: string
+  synopsis?: string
   title?: string
 }
 

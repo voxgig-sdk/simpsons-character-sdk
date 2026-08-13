@@ -8,7 +8,7 @@
         "id": "CHARACTER00",
         "name": "s5e",
         "occupation": "s5f",
-        "phrase": [],
+        "phrases": [],
         "portrait_path": "s61",
         "status": "s62"
       },
@@ -19,7 +19,7 @@
         "id": "CHARACTER01",
         "name": "sb8",
         "occupation": "sb9",
-        "phrase": [],
+        "phrases": [],
         "portrait_path": "sbb",
         "status": "sbc"
       },
@@ -30,7 +30,7 @@
         "id": "CHARACTER02",
         "name": "s112",
         "occupation": "s113",
-        "phrase": [],
+        "phrases": [],
         "portrait_path": "s115",
         "status": "s116"
       }
@@ -44,7 +44,7 @@
         "gender": "s16a",
         "name": "s16c",
         "occupation": "s16d",
-        "phrase": [],
+        "phrases": [],
         "portrait_path": "s16f",
         "status": "s170"
       }

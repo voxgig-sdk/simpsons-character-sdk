@@ -62,7 +62,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local characters, err = client:Character():list()
+local episodes, err = client:Episode():list()
 if err then error(err) end
 ```
 
@@ -120,7 +120,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Character():list()
+local result, err = client:Episode():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -249,7 +249,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `id` |  |
 | `name` |  |
 | `occupation` |  |
-| `phrase` |  |
+| `phrases` |  |
 | `portrait_path` |  |
 | `status` |  |
 
@@ -266,7 +266,7 @@ API path: `/characters`
 | `id` |  |
 | `image_path` |  |
 | `season` |  |
-| `synopsi` |  |
+| `synopsis` |  |
 | `title` |  |
 
 Operations: List, Load.
@@ -313,7 +313,7 @@ Create an instance: `local character = client:Character(nil)`
 | `id` | `number` |  |
 | `name` | `string` |  |
 | `occupation` | `string` |  |
-| `phrase` | `table` |  |
+| `phrases` | `table` |  |
 | `portrait_path` | `string` |  |
 | `status` | `string` |  |
 
@@ -350,7 +350,7 @@ Create an instance: `local episode = client:Episode(nil)`
 | `id` | `number` |  |
 | `image_path` | `string` |  |
 | `season` | `number` |  |
-| `synopsi` | `string` |  |
+| `synopsis` | `string` |  |
 | `title` | `string` |  |
 
 #### Example: Load
@@ -476,11 +476,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local character = client:Character()
-character:list()
+local episode = client:Episode()
+episode:list()
 
--- character:data_get() now returns the character data from the last list
--- character:match_get() returns the last match criteria
+-- episode:data_get() now returns the episode data from the last list
+-- episode:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

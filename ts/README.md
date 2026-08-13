@@ -35,7 +35,9 @@ const client = new SimpsonsCharacterSDK()
 
 ### 2. List character records
 
-`list()` resolves to an array of Character objects — iterate it directly:
+`list()` resolves to an array of Character ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const characters = await client.Character().list()
@@ -65,8 +67,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const characters = await client.Character().list()
-  console.log(characters)
+  const episodes = await client.Episode().list()
+  console.log(episodes)
 } catch (err) {
   console.error('list failed:', err)
 }
@@ -132,9 +134,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = SimpsonsCharacterSDK.test()
 
-const character = await client.Character().list()
-// character is a bare entity populated with mock response data
-console.log(character)
+const episode = await client.Episode().list()
+// episode is the entity, populated with mock response data
+// — call episode.data() for the record itself
+console.log(episode)
 ```
 
 You can also use the instance method:
@@ -149,7 +152,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Character()
+const entity = client.Episode()
 
 // First call runs the operation and stores its result
 await entity.list()
@@ -307,7 +310,7 @@ The `prepare()` method returns:
 | `id` |  |
 | `name` |  |
 | `occupation` |  |
-| `phrase` |  |
+| `phrases` |  |
 | `portrait_path` |  |
 | `status` |  |
 
@@ -324,7 +327,7 @@ API path: `/characters`
 | `id` |  |
 | `image_path` |  |
 | `season` |  |
-| `synopsi` |  |
+| `synopsis` |  |
 | `title` |  |
 
 Operations: list, load.
@@ -371,7 +374,7 @@ Create an instance: `const character = client.Character()`
 | `id` | `number` |  |
 | `name` | `string` |  |
 | `occupation` | `string` |  |
-| `phrase` | `any[]` |  |
+| `phrases` | `any[]` |  |
 | `portrait_path` | `string` |  |
 | `status` | `string` |  |
 
@@ -408,7 +411,7 @@ Create an instance: `const episode = client.Episode()`
 | `id` | `number` |  |
 | `image_path` | `string` |  |
 | `season` | `number` |  |
-| `synopsi` | `string` |  |
+| `synopsis` | `string` |  |
 | `title` | `string` |  |
 
 #### Example: Load
@@ -527,11 +530,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const character = client.Character()
-await character.list()
+const episode = client.Episode()
+await episode.list()
 
-// character.data() now returns the character data from the last `list`
-// character.match() returns the last match criteria
+// episode.data() now returns the episode data from the last `list`
+// episode.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

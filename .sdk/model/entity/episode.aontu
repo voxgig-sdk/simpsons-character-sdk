@@ -31,7 +31,7 @@ main: kit: entity: episode: {
       type: "`$INTEGER`"
     }
     {
-      name: "synopsi"
+      name: "synopsis"
       req: false
       type: "`$STRING`"
     }

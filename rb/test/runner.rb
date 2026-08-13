@@ -23,8 +23,8 @@ module SimpsonsCharacterTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("SIMPSONSCHARACTER_TEST_LIVE")
-    override = getenv("SIMPSONSCHARACTER_TEST_OVERRIDE")
+    live = getenv("SIMPSONS_CHARACTER_TEST_LIVE")
+    override = getenv("SIMPSONS_CHARACTER_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module SimpsonsCharacterTestRunner
       end
     end
 
-    explain = getenv("SIMPSONSCHARACTER_TEST_EXPLAIN")
-    m["SIMPSONSCHARACTER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("SIMPSONS_CHARACTER_TEST_EXPLAIN")
+    m["SIMPSONS_CHARACTER_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

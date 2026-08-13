@@ -21,7 +21,7 @@ class Character
     public int $id;
     public string $name;
     public ?string $occupation = null;
-    public ?array $phrase = null;
+    public ?array $phrases = null;
     public ?string $portrait_path = null;
     public ?string $status = null;
 }
@@ -41,7 +41,7 @@ class CharacterListMatch
     public ?int $id = null;
     public ?string $name = null;
     public ?string $occupation = null;
-    public ?array $phrase = null;
+    public ?array $phrases = null;
     public ?string $portrait_path = null;
     public ?string $status = null;
 }
@@ -54,7 +54,7 @@ class Episode
     public int $id;
     public ?string $image_path = null;
     public ?int $season = null;
-    public ?string $synopsi = null;
+    public ?string $synopsis = null;
     public string $title;
 }
 
@@ -72,7 +72,7 @@ class EpisodeListMatch
     public ?int $id = null;
     public ?string $image_path = null;
     public ?int $season = null;
-    public ?string $synopsi = null;
+    public ?string $synopsis = null;
     public ?string $title = null;
 }
 

@@ -112,7 +112,7 @@ fmt.Println(character.GetName()) // "character"
 | `id` | `int` | Yes |  |
 | `name` | `string` | Yes |  |
 | `occupation` | `string` | No |  |
-| `phrase` | `[]any` | No |  |
+| `phrases` | `[]any` | No |  |
 | `portrait_path` | `string` | No |  |
 | `status` | `string` | No |  |
 
@@ -182,7 +182,7 @@ fmt.Println(episode.GetName()) // "episode"
 | `id` | `int` | Yes |  |
 | `image_path` | `string` | No |  |
 | `season` | `int` | No |  |
-| `synopsi` | `string` | No |  |
+| `synopsis` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

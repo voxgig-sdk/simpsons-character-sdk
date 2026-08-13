@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'SimpsonsCharacter',
   }
 
 
@@ -104,7 +104,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "phrase",
+          "name": "phrases",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 6
@@ -145,6 +145,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters",
               "parts": [
@@ -184,6 +185,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}",
               "parts": [
@@ -248,7 +250,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "synopsi",
+          "name": "synopsis",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -282,6 +284,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episodes",
               "parts": [
@@ -320,6 +323,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episodes/{id}",
               "parts": [
@@ -404,6 +408,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/locations",
               "parts": [
@@ -442,6 +447,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/locations/{id}",
               "parts": [

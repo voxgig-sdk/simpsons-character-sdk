@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Character record (raises on error).
+  # load returns the ENTITY — call data_get for the Character record (raises on error).
   character = client.Character.load({ "id" => 1 })
   puts character
 rescue => err
@@ -63,7 +63,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  characters = client.Character.list()
+  episodes = client.Episode.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -131,12 +131,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
 client = SimpsonsCharacterSDK.test({
-  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "episode" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
-character = client.Character.list()
-puts character
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+episode = client.Episode.list()
+puts episode
 ```
 
 ### Use a custom fetch function
@@ -260,7 +261,7 @@ returns a result `Hash` with these keys:
 | `id` |  |
 | `name` |  |
 | `occupation` |  |
-| `phrase` |  |
+| `phrases` |  |
 | `portrait_path` |  |
 | `status` |  |
 
@@ -277,7 +278,7 @@ API path: `/characters`
 | `id` |  |
 | `image_path` |  |
 | `season` |  |
-| `synopsi` |  |
+| `synopsis` |  |
 | `title` |  |
 
 Operations: List, Load.
@@ -324,14 +325,14 @@ Create an instance: `character = client.Character`
 | `id` | `Integer` |  |
 | `name` | `String` |  |
 | `occupation` | `String` |  |
-| `phrase` | `Array` |  |
+| `phrases` | `Array` |  |
 | `portrait_path` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Character record (raises on error).
+# load returns the ENTITY — call data_get for the Character record (raises on error).
 character = client.Character.load({ "id" => 1 })
 ```
 
@@ -363,13 +364,13 @@ Create an instance: `episode = client.Episode`
 | `id` | `Integer` |  |
 | `image_path` | `String` |  |
 | `season` | `Integer` |  |
-| `synopsi` | `String` |  |
+| `synopsis` | `String` |  |
 | `title` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Episode record (raises on error).
+# load returns the ENTITY — call data_get for the Episode record (raises on error).
 episode = client.Episode.load({ "id" => 1 })
 ```
 
@@ -405,7 +406,7 @@ Create an instance: `location = client.Location`
 #### Example: Load
 
 ```ruby
-# load returns the bare Location record (raises on error).
+# load returns the ENTITY — call data_get for the Location record (raises on error).
 location = client.Location.load({ "id" => 1 })
 ```
 
@@ -493,11 +494,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-character = client.Character
-character.list()
+episode = client.Episode
+episode.list()
 
-# character.data_get now returns the character data from the last list
-# character.match_get returns the last match criteria
+# episode.data_get now returns the episode data from the last list
+# episode.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

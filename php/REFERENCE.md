@@ -106,7 +106,7 @@ $character = $client->Character();
 | `id` | `int` | Yes |  |
 | `name` | `string` | Yes |  |
 | `occupation` | `string` | No |  |
-| `phrase` | `array` | No |  |
+| `phrases` | `array` | No |  |
 | `portrait_path` | `string` | No |  |
 | `status` | `string` | No |  |
 
@@ -173,7 +173,7 @@ $episode = $client->Episode();
 | `id` | `int` | Yes |  |
 | `image_path` | `string` | No |  |
 | `season` | `int` | No |  |
-| `synopsi` | `string` | No |  |
+| `synopsis` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

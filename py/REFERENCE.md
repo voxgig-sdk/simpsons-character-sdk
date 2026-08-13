@@ -101,7 +101,7 @@ character = client.Character()
 | `id` | `int` | Yes |  |
 | `name` | `str` | Yes |  |
 | `occupation` | `str` | No |  |
-| `phrase` | `list` | No |  |
+| `phrases` | `list` | No |  |
 | `portrait_path` | `str` | No |  |
 | `status` | `str` | No |  |
 
@@ -169,7 +169,7 @@ episode = client.Episode()
 | `id` | `int` | Yes |  |
 | `image_path` | `str` | No |  |
 | `season` | `int` | No |  |
-| `synopsi` | `str` | No |  |
+| `synopsis` | `str` | No |  |
 | `title` | `str` | Yes |  |
 
 ### Operations

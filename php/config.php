@@ -76,7 +76,7 @@ class SimpsonsCharacterConfig
             ],
             [
               'active' => true,
-              'name' => 'phrase',
+              'name' => 'phrases',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 6,
@@ -117,6 +117,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters',
                   'parts' => [
@@ -156,6 +157,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}',
                   'parts' => [
@@ -220,7 +222,7 @@ class SimpsonsCharacterConfig
             ],
             [
               'active' => true,
-              'name' => 'synopsi',
+              'name' => 'synopsis',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -254,6 +256,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes',
                   'parts' => [
@@ -292,6 +295,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episodes/{id}',
                   'parts' => [
@@ -376,6 +380,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations',
                   'parts' => [
@@ -414,6 +419,7 @@ class SimpsonsCharacterConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/locations/{id}',
                   'parts' => [

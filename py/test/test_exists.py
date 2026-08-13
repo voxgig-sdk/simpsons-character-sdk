@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# SimpsonsCharacter SDK exists test
 
 import pytest
 from simpsonscharacter_sdk import SimpsonsCharacterSDK

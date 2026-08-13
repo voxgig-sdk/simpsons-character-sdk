@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import SimpsonsCharacterSDK
-from core.error import SimpsonsCharacterError
-from core.result import SimpsonsCharacterResult
-from core.response import SimpsonsCharacterResponse
-from core.spec import SimpsonsCharacterSpec
-from feature.base_feature import SimpsonsCharacterBaseFeature
+from projectname_sdk.core.error import SimpsonsCharacterError
+from projectname_sdk.core.result import SimpsonsCharacterResult
+from projectname_sdk.core.response import SimpsonsCharacterResponse
+from projectname_sdk.core.spec import SimpsonsCharacterSpec
+from projectname_sdk.feature.base_feature import SimpsonsCharacterBaseFeature
 
 
 def _client():

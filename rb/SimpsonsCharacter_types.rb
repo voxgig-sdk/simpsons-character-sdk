@@ -28,7 +28,7 @@
 # @!attribute [rw] occupation
 #   @return [String, nil]
 #
-# @!attribute [rw] phrase
+# @!attribute [rw] phrases
 #   @return [Array, nil]
 #
 # @!attribute [rw] portrait_path
@@ -43,7 +43,7 @@ Character = Struct.new(
   :id,
   :name,
   :occupation,
-  :phrase,
+  :phrases,
   :portrait_path,
   :status,
   keyword_init: true
@@ -78,7 +78,7 @@ CharacterLoadMatch = Struct.new(
 # @!attribute [rw] occupation
 #   @return [String, nil]
 #
-# @!attribute [rw] phrase
+# @!attribute [rw] phrases
 #   @return [Array, nil]
 #
 # @!attribute [rw] portrait_path
@@ -93,7 +93,7 @@ CharacterListMatch = Struct.new(
   :id,
   :name,
   :occupation,
-  :phrase,
+  :phrases,
   :portrait_path,
   :status,
   keyword_init: true
@@ -116,7 +116,7 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] season
 #   @return [Integer, nil]
 #
-# @!attribute [rw] synopsi
+# @!attribute [rw] synopsis
 #   @return [String, nil]
 #
 # @!attribute [rw] title
@@ -127,7 +127,7 @@ Episode = Struct.new(
   :id,
   :image_path,
   :season,
-  :synopsi,
+  :synopsis,
   :title,
   keyword_init: true
 )
@@ -158,7 +158,7 @@ EpisodeLoadMatch = Struct.new(
 # @!attribute [rw] season
 #   @return [Integer, nil]
 #
-# @!attribute [rw] synopsi
+# @!attribute [rw] synopsis
 #   @return [String, nil]
 #
 # @!attribute [rw] title
@@ -169,7 +169,7 @@ EpisodeListMatch = Struct.new(
   :id,
   :image_path,
   :season,
-  :synopsi,
+  :synopsis,
   :title,
   keyword_init: true
 )

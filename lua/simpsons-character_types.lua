@@ -13,7 +13,7 @@
 ---@field id number
 ---@field name string
 ---@field occupation? string
----@field phrase? table
+---@field phrases? table
 ---@field portrait_path? string
 ---@field status? string
 
@@ -27,7 +27,7 @@
 ---@field id? number
 ---@field name? string
 ---@field occupation? string
----@field phrase? table
+---@field phrases? table
 ---@field portrait_path? string
 ---@field status? string
 
@@ -37,7 +37,7 @@
 ---@field id number
 ---@field image_path? string
 ---@field season? number
----@field synopsi? string
+---@field synopsis? string
 ---@field title string
 
 ---@class EpisodeLoadMatch
@@ -49,7 +49,7 @@
 ---@field id? number
 ---@field image_path? string
 ---@field season? number
----@field synopsi? string
+---@field synopsis? string
 ---@field title? string
 
 ---@class Location

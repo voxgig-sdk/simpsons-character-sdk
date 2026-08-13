@@ -70,7 +70,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "phrase",
+            ["name"] = "phrases",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 6,
@@ -111,6 +111,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters",
                 ["parts"] = {
@@ -150,6 +151,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters/{id}",
                 ["parts"] = {
@@ -214,7 +216,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "synopsi",
+            ["name"] = "synopsis",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 5,
@@ -248,6 +250,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes",
                 ["parts"] = {
@@ -286,6 +289,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes/{id}",
                 ["parts"] = {
@@ -370,6 +374,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations",
                 ["parts"] = {
@@ -408,6 +413,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations/{id}",
                 ["parts"] = {

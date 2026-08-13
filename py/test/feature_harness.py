@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import SimpsonsCharacterControl
-from core.error import SimpsonsCharacterError
-from core.result import SimpsonsCharacterResult
-from core.spec import SimpsonsCharacterSpec
+from simpsonscharacter_sdk.config import make_config
+from simpsonscharacter_sdk.features import _make_feature
+from simpsonscharacter_sdk.core.control import SimpsonsCharacterControl
+from simpsonscharacter_sdk.core.error import SimpsonsCharacterError
+from simpsonscharacter_sdk.core.result import SimpsonsCharacterResult
+from simpsonscharacter_sdk.core.spec import SimpsonsCharacterSpec
 
 
 # True when this SDK was generated with the named feature.

@@ -7,7 +7,7 @@
         "id": "EPISODE00",
         "image_path": "s49",
         "season": "s4a",
-        "synopsi": "s4b",
+        "synopsis": "s4b",
         "title": "s4c"
       },
       "EPISODE01": {
@@ -16,7 +16,7 @@
         "id": "EPISODE01",
         "image_path": "s8f",
         "season": "s90",
-        "synopsi": "s91",
+        "synopsis": "s91",
         "title": "s92"
       },
       "EPISODE02": {
@@ -25,7 +25,7 @@
         "id": "EPISODE02",
         "image_path": "sd5",
         "season": "sd6",
-        "synopsi": "sd7",
+        "synopsis": "sd7",
         "title": "sd8"
       }
     }
@@ -37,7 +37,7 @@
         "episode_number": "s119",
         "image_path": "s11b",
         "season": "s11c",
-        "synopsi": "s11d",
+        "synopsis": "s11d",
         "title": "s11e"
       }
     }
