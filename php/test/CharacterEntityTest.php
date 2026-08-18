@@ -40,7 +40,7 @@ class CharacterEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = SimpsonsCharacterConfig::make_config();
+        $cfg = SimpsonsCharacterConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = SimpsonsCharacterSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];

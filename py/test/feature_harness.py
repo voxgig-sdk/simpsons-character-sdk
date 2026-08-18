@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from simpsonscharacter_sdk.config import make_config
+from simpsonscharacter_sdk.config import shared_config
 from simpsonscharacter_sdk.features import _make_feature
 from simpsonscharacter_sdk.core.control import SimpsonsCharacterControl
 from simpsonscharacter_sdk.core.error import SimpsonsCharacterError
@@ -24,7 +24,7 @@ from simpsonscharacter_sdk.core.spec import SimpsonsCharacterSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

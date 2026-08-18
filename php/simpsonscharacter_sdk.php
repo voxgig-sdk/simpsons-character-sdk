@@ -40,7 +40,7 @@ class SimpsonsCharacterSDK
         $utility = new SimpsonsCharacterUtility();
         $this->_utility = $utility;
 
-        $config = SimpsonsCharacterConfig::make_config();
+        $config = SimpsonsCharacterConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

@@ -28,7 +28,7 @@ class SimpsonsCharacterSDK
     utility = SimpsonsCharacterUtility.new
     @_utility = utility
 
-    config = SimpsonsCharacterConfig.make_config
+    config = SimpsonsCharacterConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
