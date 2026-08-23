@@ -100,15 +100,15 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | `int` | No |  |
-| `birthdate` | `string` | No |  |
-| `gender` | `string` | No |  |
-| `id` | `int` | Yes |  |
-| `name` | `string` | Yes |  |
-| `occupation` | `string` | No |  |
-| `phrases` | `array` | No |  |
-| `portrait_path` | `string` | No |  |
-| `status` | `string` | No |  |
+| `age` | `int` | No | Age of the character |
+| `birthdate` | `string` | No | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `string` | No | Gender of the character |
+| `id` | `int` | Yes | Unique identifier for the character |
+| `name` | `string` | Yes | Full name of the character |
+| `occupation` | `string` | No | Occupation or job title of the character |
+| `phrases` | `array` | No | Famous quotes and catchphrases of the character |
+| `portrait_path` | `string` | No | Path to the character's portrait image (served via CDN) |
+| `status` | `string` | No | Current status of the character |
 
 ### Operations
 
@@ -168,13 +168,13 @@ $episode = $client->Episode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `string` | No |  |
-| `episode_number` | `int` | No |  |
-| `id` | `int` | Yes |  |
-| `image_path` | `string` | No |  |
-| `season` | `int` | No |  |
-| `synopsis` | `string` | No |  |
-| `title` | `string` | Yes |  |
+| `air_date` | `string` | No | Original air date of the episode |
+| `episode_number` | `int` | No | Episode number within the season |
+| `id` | `int` | Yes | Unique identifier for the episode |
+| `image_path` | `string` | No | Path to the episode image |
+| `season` | `int` | No | Season number |
+| `synopsis` | `string` | No | Brief synopsis of the episode |
+| `title` | `string` | Yes | Title of the episode |
 
 ### Operations
 
@@ -234,11 +234,11 @@ $location = $client->Location();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `int` | Yes |  |
-| `image_path` | `string` | No |  |
-| `name` | `string` | Yes |  |
-| `type` | `string` | No |  |
+| `description` | `string` | No | Description of the location |
+| `id` | `int` | Yes | Unique identifier for the location |
+| `image_path` | `string` | No | Path to the location image |
+| `name` | `string` | Yes | Name of the location |
+| `type` | `string` | No | Type of location (home, business, landmark, etc.) |
 
 ### Operations
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "SimpsonsCharacter",
+			"slug": "simpsons-character",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -35,40 +38,49 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "age",
+						"short": "Age of the character",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "birthdate",
+						"short": "Birthdate of the character in YYYY-MM-DD format",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "gender",
+						"short": "Gender of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the character",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "Full name of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "occupation",
+						"short": "Occupation or job title of the character",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "phrases",
+						"short": "Famous quotes and catchphrases of the character",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "portrait_path",
+						"short": "Path to the character's portrait image (served via CDN)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Current status of the character",
 						"type": "`$STRING`",
 					},
 				},
@@ -153,32 +165,39 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "air_date",
+						"short": "Original air date of the episode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "episode_number",
+						"short": "Episode number within the season",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the episode",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "image_path",
+						"short": "Path to the episode image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "season",
+						"short": "Season number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "synopsis",
+						"short": "Brief synopsis of the episode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Title of the episode",
 						"type": "`$STRING`",
 					},
 				},
@@ -262,24 +281,29 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Description of the location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the location",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "image_path",
+						"short": "Path to the location image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "Name of the location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "type",
+						"short": "Type of location (home, business, landmark, etc.)",
 						"type": "`$STRING`",
 					},
 				},

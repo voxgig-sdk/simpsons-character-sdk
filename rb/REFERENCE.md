@@ -101,15 +101,15 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `age` | `Integer` | No |  |
-| `birthdate` | `String` | No |  |
-| `gender` | `String` | No |  |
-| `id` | `Integer` | Yes |  |
-| `name` | `String` | Yes |  |
-| `occupation` | `String` | No |  |
-| `phrases` | `Array` | No |  |
-| `portrait_path` | `String` | No |  |
-| `status` | `String` | No |  |
+| `age` | `Integer` | No | Age of the character |
+| `birthdate` | `String` | No | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `String` | No | Gender of the character |
+| `id` | `Integer` | Yes | Unique identifier for the character |
+| `name` | `String` | Yes | Full name of the character |
+| `occupation` | `String` | No | Occupation or job title of the character |
+| `phrases` | `Array` | No | Famous quotes and catchphrases of the character |
+| `portrait_path` | `String` | No | Path to the character's portrait image (served via CDN) |
+| `status` | `String` | No | Current status of the character |
 
 ### Operations
 
@@ -169,13 +169,13 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `air_date` | `String` | No |  |
-| `episode_number` | `Integer` | No |  |
-| `id` | `Integer` | Yes |  |
-| `image_path` | `String` | No |  |
-| `season` | `Integer` | No |  |
-| `synopsis` | `String` | No |  |
-| `title` | `String` | Yes |  |
+| `air_date` | `String` | No | Original air date of the episode |
+| `episode_number` | `Integer` | No | Episode number within the season |
+| `id` | `Integer` | Yes | Unique identifier for the episode |
+| `image_path` | `String` | No | Path to the episode image |
+| `season` | `Integer` | No | Season number |
+| `synopsis` | `String` | No | Brief synopsis of the episode |
+| `title` | `String` | Yes | Title of the episode |
 
 ### Operations
 
@@ -235,11 +235,11 @@ location = client.Location
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `id` | `Integer` | Yes |  |
-| `image_path` | `String` | No |  |
-| `name` | `String` | Yes |  |
-| `type` | `String` | No |  |
+| `description` | `String` | No | Description of the location |
+| `id` | `Integer` | Yes | Unique identifier for the location |
+| `image_path` | `String` | No | Path to the location image |
+| `name` | `String` | Yes | Name of the location |
+| `type` | `String` | No | Type of location (home, business, landmark, etc.) |
 
 ### Operations
 

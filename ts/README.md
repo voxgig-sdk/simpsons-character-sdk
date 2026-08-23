@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -304,15 +304,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `age` |  |
-| `birthdate` |  |
-| `gender` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `phrases` |  |
-| `portrait_path` |  |
-| `status` |  |
+| `age` | Age of the character |
+| `birthdate` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | Gender of the character |
+| `id` | Unique identifier for the character |
+| `name` | Full name of the character |
+| `occupation` | Occupation or job title of the character |
+| `phrases` | Famous quotes and catchphrases of the character |
+| `portrait_path` | Path to the character's portrait image (served via CDN) |
+| `status` | Current status of the character |
 
 Operations: list, load.
 
@@ -322,13 +322,13 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
-| `episode_number` |  |
-| `id` |  |
-| `image_path` |  |
-| `season` |  |
-| `synopsis` |  |
-| `title` |  |
+| `air_date` | Original air date of the episode |
+| `episode_number` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `image_path` | Path to the episode image |
+| `season` | Season number |
+| `synopsis` | Brief synopsis of the episode |
+| `title` | Title of the episode |
 
 Operations: list, load.
 
@@ -338,11 +338,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image_path` |  |
-| `name` |  |
-| `type` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `image_path` | Path to the location image |
+| `name` | Name of the location |
+| `type` | Type of location (home, business, landmark, etc.) |
 
 Operations: list, load.
 
@@ -368,15 +368,15 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `age` | `number` |  |
-| `birthdate` | `string` |  |
-| `gender` | `string` |  |
-| `id` | `number` |  |
-| `name` | `string` |  |
-| `occupation` | `string` |  |
-| `phrases` | `any[]` |  |
-| `portrait_path` | `string` |  |
-| `status` | `string` |  |
+| `age` | `number` | Age of the character |
+| `birthdate` | `string` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `string` | Gender of the character |
+| `id` | `number` | Unique identifier for the character |
+| `name` | `string` | Full name of the character |
+| `occupation` | `string` | Occupation or job title of the character |
+| `phrases` | `any[]` | Famous quotes and catchphrases of the character |
+| `portrait_path` | `string` | Path to the character's portrait image (served via CDN) |
+| `status` | `string` | Current status of the character |
 
 #### Example: Load
 
@@ -406,13 +406,13 @@ Create an instance: `const episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
-| `episode_number` | `number` |  |
-| `id` | `number` |  |
-| `image_path` | `string` |  |
-| `season` | `number` |  |
-| `synopsis` | `string` |  |
-| `title` | `string` |  |
+| `air_date` | `string` | Original air date of the episode |
+| `episode_number` | `number` | Episode number within the season |
+| `id` | `number` | Unique identifier for the episode |
+| `image_path` | `string` | Path to the episode image |
+| `season` | `number` | Season number |
+| `synopsis` | `string` | Brief synopsis of the episode |
+| `title` | `string` | Title of the episode |
 
 #### Example: Load
 
@@ -442,11 +442,11 @@ Create an instance: `const location = client.Location()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image_path` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
+| `description` | `string` | Description of the location |
+| `id` | `number` | Unique identifier for the location |
+| `image_path` | `string` | Path to the location image |
+| `name` | `string` | Name of the location |
+| `type` | `string` | Type of location (home, business, landmark, etc.) |
 
 #### Example: Load
 

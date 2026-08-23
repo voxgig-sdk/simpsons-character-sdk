@@ -6,7 +6,7 @@ The Golang SDK for the SimpsonsCharacter API — an entity-oriented client using
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Character(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -271,15 +271,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"age"` |  |
-| `"birthdate"` |  |
-| `"gender"` |  |
-| `"id"` |  |
-| `"name"` |  |
-| `"occupation"` |  |
-| `"phrases"` |  |
-| `"portrait_path"` |  |
-| `"status"` |  |
+| `"age"` | Age of the character |
+| `"birthdate"` | Birthdate of the character in YYYY-MM-DD format |
+| `"gender"` | Gender of the character |
+| `"id"` | Unique identifier for the character |
+| `"name"` | Full name of the character |
+| `"occupation"` | Occupation or job title of the character |
+| `"phrases"` | Famous quotes and catchphrases of the character |
+| `"portrait_path"` | Path to the character's portrait image (served via CDN) |
+| `"status"` | Current status of the character |
 
 Operations: List, Load.
 
@@ -289,13 +289,13 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `"air_date"` |  |
-| `"episode_number"` |  |
-| `"id"` |  |
-| `"image_path"` |  |
-| `"season"` |  |
-| `"synopsis"` |  |
-| `"title"` |  |
+| `"air_date"` | Original air date of the episode |
+| `"episode_number"` | Episode number within the season |
+| `"id"` | Unique identifier for the episode |
+| `"image_path"` | Path to the episode image |
+| `"season"` | Season number |
+| `"synopsis"` | Brief synopsis of the episode |
+| `"title"` | Title of the episode |
 
 Operations: List, Load.
 
@@ -305,11 +305,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"id"` |  |
-| `"image_path"` |  |
-| `"name"` |  |
-| `"type"` |  |
+| `"description"` | Description of the location |
+| `"id"` | Unique identifier for the location |
+| `"image_path"` | Path to the location image |
+| `"name"` | Name of the location |
+| `"type"` | Type of location (home, business, landmark, etc.) |
 
 Operations: List, Load.
 
@@ -335,15 +335,15 @@ Create an instance: `character := client.Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `age` | `int` |  |
-| `birthdate` | `string` |  |
-| `gender` | `string` |  |
-| `id` | `int` |  |
-| `name` | `string` |  |
-| `occupation` | `string` |  |
-| `phrases` | `[]any` |  |
-| `portrait_path` | `string` |  |
-| `status` | `string` |  |
+| `age` | `int` | Age of the character |
+| `birthdate` | `string` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `string` | Gender of the character |
+| `id` | `int` | Unique identifier for the character |
+| `name` | `string` | Full name of the character |
+| `occupation` | `string` | Occupation or job title of the character |
+| `phrases` | `[]any` | Famous quotes and catchphrases of the character |
+| `portrait_path` | `string` | Path to the character's portrait image (served via CDN) |
+| `status` | `string` | Current status of the character |
 
 #### Example: Load
 
@@ -381,13 +381,13 @@ Create an instance: `episode := client.Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
-| `episode_number` | `int` |  |
-| `id` | `int` |  |
-| `image_path` | `string` |  |
-| `season` | `int` |  |
-| `synopsis` | `string` |  |
-| `title` | `string` |  |
+| `air_date` | `string` | Original air date of the episode |
+| `episode_number` | `int` | Episode number within the season |
+| `id` | `int` | Unique identifier for the episode |
+| `image_path` | `string` | Path to the episode image |
+| `season` | `int` | Season number |
+| `synopsis` | `string` | Brief synopsis of the episode |
+| `title` | `string` | Title of the episode |
 
 #### Example: Load
 
@@ -425,11 +425,11 @@ Create an instance: `location := client.Location(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `int` |  |
-| `image_path` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
+| `description` | `string` | Description of the location |
+| `id` | `int` | Unique identifier for the location |
+| `image_path` | `string` | Path to the location image |
+| `name` | `string` | Name of the location |
+| `type` | `string` | Type of location (home, business, landmark, etc.) |
 
 #### Example: Load
 

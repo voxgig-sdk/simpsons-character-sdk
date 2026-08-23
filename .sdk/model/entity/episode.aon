@@ -1,53 +1,50 @@
-# Entity: character
+# Entity: episode
 
-main: kit: entity: character: {
+main: kit: entity: episode: {
 
   alias: field: {}
 
   fields: [
     {
-      name: "age"
+      name: "air_date"
       req: false
+      short: "Original air date of the episode"
+      type: "`$STRING`"
+    }
+    {
+      name: "episode_number"
+      req: false
+      short: "Episode number within the season"
       type: "`$INTEGER`"
-    }
-    {
-      name: "birthdate"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "gender"
-      req: false
-      type: "`$STRING`"
     }
     {
       name: "id"
       req: true
+      short: "Unique identifier for the episode"
       type: "`$INTEGER`"
     }
     {
-      name: "name"
+      name: "image_path"
+      req: false
+      short: "Path to the episode image"
+      type: "`$STRING`"
+    }
+    {
+      name: "season"
+      req: false
+      short: "Season number"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      short: "Brief synopsis of the episode"
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
       req: true
-      type: "`$STRING`"
-    }
-    {
-      name: "occupation"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "phrases"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
-      name: "portrait_path"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "status"
-      req: false
+      short: "Title of the episode"
       type: "`$STRING`"
     }
   ]
@@ -57,7 +54,7 @@ main: kit: entity: character: {
     name: "id"
   }
 
-  name: "character"
+  name: "episode"
   op: {
     list: {
       name: "list"
@@ -76,9 +73,9 @@ main: kit: entity: character: {
             ]
           }
           method: "GET"
-          orig: "/characters"
+          orig: "/episodes"
           parts: [
-            "characters"
+            "episodes"
           ]
           select: {
             exist: [
@@ -99,7 +96,6 @@ main: kit: entity: character: {
           args: {
             params: [
               {
-                example: 1
                 kind: "param"
                 name: "id"
                 orig: "id"
@@ -109,9 +105,9 @@ main: kit: entity: character: {
             ]
           }
           method: "GET"
-          orig: "/characters/{id}"
+          orig: "/episodes/{id}"
           parts: [
-            "characters"
+            "episodes"
             "{id}"
           ]
           select: {

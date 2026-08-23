@@ -255,15 +255,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `age` |  |
-| `birthdate` |  |
-| `gender` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `phrases` |  |
-| `portrait_path` |  |
-| `status` |  |
+| `age` | Age of the character |
+| `birthdate` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | Gender of the character |
+| `id` | Unique identifier for the character |
+| `name` | Full name of the character |
+| `occupation` | Occupation or job title of the character |
+| `phrases` | Famous quotes and catchphrases of the character |
+| `portrait_path` | Path to the character's portrait image (served via CDN) |
+| `status` | Current status of the character |
 
 Operations: List, Load.
 
@@ -273,13 +273,13 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
-| `episode_number` |  |
-| `id` |  |
-| `image_path` |  |
-| `season` |  |
-| `synopsis` |  |
-| `title` |  |
+| `air_date` | Original air date of the episode |
+| `episode_number` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `image_path` | Path to the episode image |
+| `season` | Season number |
+| `synopsis` | Brief synopsis of the episode |
+| `title` | Title of the episode |
 
 Operations: List, Load.
 
@@ -289,11 +289,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image_path` |  |
-| `name` |  |
-| `type` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `image_path` | Path to the location image |
+| `name` | Name of the location |
+| `type` | Type of location (home, business, landmark, etc.) |
 
 Operations: List, Load.
 
@@ -319,15 +319,15 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `age` | `Integer` |  |
-| `birthdate` | `String` |  |
-| `gender` | `String` |  |
-| `id` | `Integer` |  |
-| `name` | `String` |  |
-| `occupation` | `String` |  |
-| `phrases` | `Array` |  |
-| `portrait_path` | `String` |  |
-| `status` | `String` |  |
+| `age` | `Integer` | Age of the character |
+| `birthdate` | `String` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `String` | Gender of the character |
+| `id` | `Integer` | Unique identifier for the character |
+| `name` | `String` | Full name of the character |
+| `occupation` | `String` | Occupation or job title of the character |
+| `phrases` | `Array` | Famous quotes and catchphrases of the character |
+| `portrait_path` | `String` | Path to the character's portrait image (served via CDN) |
+| `status` | `String` | Current status of the character |
 
 #### Example: Load
 
@@ -359,13 +359,13 @@ Create an instance: `episode = client.Episode`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `String` |  |
-| `episode_number` | `Integer` |  |
-| `id` | `Integer` |  |
-| `image_path` | `String` |  |
-| `season` | `Integer` |  |
-| `synopsis` | `String` |  |
-| `title` | `String` |  |
+| `air_date` | `String` | Original air date of the episode |
+| `episode_number` | `Integer` | Episode number within the season |
+| `id` | `Integer` | Unique identifier for the episode |
+| `image_path` | `String` | Path to the episode image |
+| `season` | `Integer` | Season number |
+| `synopsis` | `String` | Brief synopsis of the episode |
+| `title` | `String` | Title of the episode |
 
 #### Example: Load
 
@@ -397,11 +397,11 @@ Create an instance: `location = client.Location`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `String` |  |
-| `id` | `Integer` |  |
-| `image_path` | `String` |  |
-| `name` | `String` |  |
-| `type` | `String` |  |
+| `description` | `String` | Description of the location |
+| `id` | `Integer` | Unique identifier for the location |
+| `image_path` | `String` | Path to the location image |
+| `name` | `String` | Name of the location |
+| `type` | `String` | Type of location (home, business, landmark, etc.) |
 
 #### Example: Load
 

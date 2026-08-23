@@ -1,43 +1,62 @@
-# Entity: episode
+# Entity: character
 
-main: kit: entity: episode: {
+main: kit: entity: character: {
 
   alias: field: {}
 
   fields: [
     {
-      name: "air_date"
+      name: "age"
       req: false
+      short: "Age of the character"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "birthdate"
+      req: false
+      short: "Birthdate of the character in YYYY-MM-DD format"
       type: "`$STRING`"
     }
     {
-      name: "episode_number"
+      name: "gender"
       req: false
-      type: "`$INTEGER`"
+      short: "Gender of the character"
+      type: "`$STRING`"
     }
     {
       name: "id"
       req: true
+      short: "Unique identifier for the character"
       type: "`$INTEGER`"
     }
     {
-      name: "image_path"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "season"
-      req: false
-      type: "`$INTEGER`"
-    }
-    {
-      name: "synopsis"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "title"
+      name: "name"
       req: true
+      short: "Full name of the character"
+      type: "`$STRING`"
+    }
+    {
+      name: "occupation"
+      req: false
+      short: "Occupation or job title of the character"
+      type: "`$STRING`"
+    }
+    {
+      name: "phrases"
+      req: false
+      short: "Famous quotes and catchphrases of the character"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "portrait_path"
+      req: false
+      short: "Path to the character's portrait image (served via CDN)"
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      short: "Current status of the character"
       type: "`$STRING`"
     }
   ]
@@ -47,7 +66,7 @@ main: kit: entity: episode: {
     name: "id"
   }
 
-  name: "episode"
+  name: "character"
   op: {
     list: {
       name: "list"
@@ -66,9 +85,9 @@ main: kit: entity: episode: {
             ]
           }
           method: "GET"
-          orig: "/episodes"
+          orig: "/characters"
           parts: [
-            "episodes"
+            "characters"
           ]
           select: {
             exist: [
@@ -89,6 +108,7 @@ main: kit: entity: episode: {
           args: {
             params: [
               {
+                example: 1
                 kind: "param"
                 name: "id"
                 orig: "id"
@@ -98,9 +118,9 @@ main: kit: entity: episode: {
             ]
           }
           method: "GET"
-          orig: "/episodes/{id}"
+          orig: "/characters/{id}"
           parts: [
-            "episodes"
+            "characters"
             "{id}"
           ]
           select: {

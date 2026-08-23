@@ -258,15 +258,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `age` |  |
-| `birthdate` |  |
-| `gender` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `phrases` |  |
-| `portrait_path` |  |
-| `status` |  |
+| `age` | Age of the character |
+| `birthdate` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | Gender of the character |
+| `id` | Unique identifier for the character |
+| `name` | Full name of the character |
+| `occupation` | Occupation or job title of the character |
+| `phrases` | Famous quotes and catchphrases of the character |
+| `portrait_path` | Path to the character's portrait image (served via CDN) |
+| `status` | Current status of the character |
 
 Operations: List, Load.
 
@@ -276,13 +276,13 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
-| `episode_number` |  |
-| `id` |  |
-| `image_path` |  |
-| `season` |  |
-| `synopsis` |  |
-| `title` |  |
+| `air_date` | Original air date of the episode |
+| `episode_number` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `image_path` | Path to the episode image |
+| `season` | Season number |
+| `synopsis` | Brief synopsis of the episode |
+| `title` | Title of the episode |
 
 Operations: List, Load.
 
@@ -292,11 +292,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image_path` |  |
-| `name` |  |
-| `type` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `image_path` | Path to the location image |
+| `name` | Name of the location |
+| `type` | Type of location (home, business, landmark, etc.) |
 
 Operations: List, Load.
 
@@ -322,15 +322,15 @@ Create an instance: `character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `age` | `int` |  |
-| `birthdate` | `str` |  |
-| `gender` | `str` |  |
-| `id` | `int` |  |
-| `name` | `str` |  |
-| `occupation` | `str` |  |
-| `phrases` | `list` |  |
-| `portrait_path` | `str` |  |
-| `status` | `str` |  |
+| `age` | `int` | Age of the character |
+| `birthdate` | `str` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `str` | Gender of the character |
+| `id` | `int` | Unique identifier for the character |
+| `name` | `str` | Full name of the character |
+| `occupation` | `str` | Occupation or job title of the character |
+| `phrases` | `list` | Famous quotes and catchphrases of the character |
+| `portrait_path` | `str` | Path to the character's portrait image (served via CDN) |
+| `status` | `str` | Current status of the character |
 
 #### Example: Load
 
@@ -360,13 +360,13 @@ Create an instance: `episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `str` |  |
-| `episode_number` | `int` |  |
-| `id` | `int` |  |
-| `image_path` | `str` |  |
-| `season` | `int` |  |
-| `synopsis` | `str` |  |
-| `title` | `str` |  |
+| `air_date` | `str` | Original air date of the episode |
+| `episode_number` | `int` | Episode number within the season |
+| `id` | `int` | Unique identifier for the episode |
+| `image_path` | `str` | Path to the episode image |
+| `season` | `int` | Season number |
+| `synopsis` | `str` | Brief synopsis of the episode |
+| `title` | `str` | Title of the episode |
 
 #### Example: Load
 
@@ -396,11 +396,11 @@ Create an instance: `location = client.Location()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `id` | `int` |  |
-| `image_path` | `str` |  |
-| `name` | `str` |  |
-| `type` | `str` |  |
+| `description` | `str` | Description of the location |
+| `id` | `int` | Unique identifier for the location |
+| `image_path` | `str` | Path to the location image |
+| `name` | `str` | Name of the location |
+| `type` | `str` | Type of location (home, business, landmark, etc.) |
 
 #### Example: Load
 

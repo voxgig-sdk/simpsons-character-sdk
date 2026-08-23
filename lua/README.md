@@ -243,15 +243,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `age` |  |
-| `birthdate` |  |
-| `gender` |  |
-| `id` |  |
-| `name` |  |
-| `occupation` |  |
-| `phrases` |  |
-| `portrait_path` |  |
-| `status` |  |
+| `age` | Age of the character |
+| `birthdate` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | Gender of the character |
+| `id` | Unique identifier for the character |
+| `name` | Full name of the character |
+| `occupation` | Occupation or job title of the character |
+| `phrases` | Famous quotes and catchphrases of the character |
+| `portrait_path` | Path to the character's portrait image (served via CDN) |
+| `status` | Current status of the character |
 
 Operations: List, Load.
 
@@ -261,13 +261,13 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
-| `air_date` |  |
-| `episode_number` |  |
-| `id` |  |
-| `image_path` |  |
-| `season` |  |
-| `synopsis` |  |
-| `title` |  |
+| `air_date` | Original air date of the episode |
+| `episode_number` | Episode number within the season |
+| `id` | Unique identifier for the episode |
+| `image_path` | Path to the episode image |
+| `season` | Season number |
+| `synopsis` | Brief synopsis of the episode |
+| `title` | Title of the episode |
 
 Operations: List, Load.
 
@@ -277,11 +277,11 @@ API path: `/episodes`
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `image_path` |  |
-| `name` |  |
-| `type` |  |
+| `description` | Description of the location |
+| `id` | Unique identifier for the location |
+| `image_path` | Path to the location image |
+| `name` | Name of the location |
+| `type` | Type of location (home, business, landmark, etc.) |
 
 Operations: List, Load.
 
@@ -307,15 +307,15 @@ Create an instance: `local character = client:Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `age` | `number` |  |
-| `birthdate` | `string` |  |
-| `gender` | `string` |  |
-| `id` | `number` |  |
-| `name` | `string` |  |
-| `occupation` | `string` |  |
-| `phrases` | `table` |  |
-| `portrait_path` | `string` |  |
-| `status` | `string` |  |
+| `age` | `number` | Age of the character |
+| `birthdate` | `string` | Birthdate of the character in YYYY-MM-DD format |
+| `gender` | `string` | Gender of the character |
+| `id` | `number` | Unique identifier for the character |
+| `name` | `string` | Full name of the character |
+| `occupation` | `string` | Occupation or job title of the character |
+| `phrases` | `table` | Famous quotes and catchphrases of the character |
+| `portrait_path` | `string` | Path to the character's portrait image (served via CDN) |
+| `status` | `string` | Current status of the character |
 
 #### Example: Load
 
@@ -345,13 +345,13 @@ Create an instance: `local episode = client:Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `air_date` | `string` |  |
-| `episode_number` | `number` |  |
-| `id` | `number` |  |
-| `image_path` | `string` |  |
-| `season` | `number` |  |
-| `synopsis` | `string` |  |
-| `title` | `string` |  |
+| `air_date` | `string` | Original air date of the episode |
+| `episode_number` | `number` | Episode number within the season |
+| `id` | `number` | Unique identifier for the episode |
+| `image_path` | `string` | Path to the episode image |
+| `season` | `number` | Season number |
+| `synopsis` | `string` | Brief synopsis of the episode |
+| `title` | `string` | Title of the episode |
 
 #### Example: Load
 
@@ -381,11 +381,11 @@ Create an instance: `local location = client:Location(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `number` |  |
-| `image_path` | `string` |  |
-| `name` | `string` |  |
-| `type` | `string` |  |
+| `description` | `string` | Description of the location |
+| `id` | `number` | Unique identifier for the location |
+| `image_path` | `string` | Path to the location image |
+| `name` | `string` | Name of the location |
+| `type` | `string` | Type of location (home, business, landmark, etc.) |
 
 #### Example: Load
 

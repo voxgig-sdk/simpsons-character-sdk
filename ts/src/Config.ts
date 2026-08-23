@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'SimpsonsCharacter',
+        slug: "simpsons-character",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -62,40 +73,49 @@ class Config {
       "fields": [
         {
           "name": "age",
+          "short": "Age of the character",
           "type": "`$INTEGER`"
         },
         {
           "name": "birthdate",
+          "short": "Birthdate of the character in YYYY-MM-DD format",
           "type": "`$STRING`"
         },
         {
           "name": "gender",
+          "short": "Gender of the character",
           "type": "`$STRING`"
         },
         {
           "name": "id",
           "req": true,
+          "short": "Unique identifier for the character",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "Full name of the character",
           "type": "`$STRING`"
         },
         {
           "name": "occupation",
+          "short": "Occupation or job title of the character",
           "type": "`$STRING`"
         },
         {
           "name": "phrases",
+          "short": "Famous quotes and catchphrases of the character",
           "type": "`$ARRAY`"
         },
         {
           "name": "portrait_path",
+          "short": "Path to the character's portrait image (served via CDN)",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Current status of the character",
           "type": "`$STRING`"
         }
       ],
@@ -180,32 +200,39 @@ class Config {
       "fields": [
         {
           "name": "air_date",
+          "short": "Original air date of the episode",
           "type": "`$STRING`"
         },
         {
           "name": "episode_number",
+          "short": "Episode number within the season",
           "type": "`$INTEGER`"
         },
         {
           "name": "id",
           "req": true,
+          "short": "Unique identifier for the episode",
           "type": "`$INTEGER`"
         },
         {
           "name": "image_path",
+          "short": "Path to the episode image",
           "type": "`$STRING`"
         },
         {
           "name": "season",
+          "short": "Season number",
           "type": "`$INTEGER`"
         },
         {
           "name": "synopsis",
+          "short": "Brief synopsis of the episode",
           "type": "`$STRING`"
         },
         {
           "name": "title",
           "req": true,
+          "short": "Title of the episode",
           "type": "`$STRING`"
         }
       ],
@@ -289,24 +316,29 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Description of the location",
           "type": "`$STRING`"
         },
         {
           "name": "id",
           "req": true,
+          "short": "Unique identifier for the location",
           "type": "`$INTEGER`"
         },
         {
           "name": "image_path",
+          "short": "Path to the location image",
           "type": "`$STRING`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "Name of the location",
           "type": "`$STRING`"
         },
         {
           "name": "type",
+          "short": "Type of location (home, business, landmark, etc.)",
           "type": "`$STRING`"
         }
       ],
