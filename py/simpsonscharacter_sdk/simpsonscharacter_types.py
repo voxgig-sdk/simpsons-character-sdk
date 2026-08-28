@@ -36,15 +36,7 @@ class CharacterLoadMatch(TypedDict):
 
 
 class CharacterListMatch(TypedDict, total=False):
-    age: int
-    birthdate: str
-    gender: str
-    id: int
-    name: str
-    occupation: str
-    phrases: list
-    portrait_path: str
-    status: str
+    page: int
 
 
 class EpisodeRequired(TypedDict):
@@ -65,13 +57,7 @@ class EpisodeLoadMatch(TypedDict):
 
 
 class EpisodeListMatch(TypedDict, total=False):
-    air_date: str
-    episode_number: int
-    id: int
-    image_path: str
-    season: int
-    synopsis: str
-    title: str
+    page: int
 
 
 class LocationRequired(TypedDict):
@@ -90,8 +76,4 @@ class LocationLoadMatch(TypedDict):
 
 
 class LocationListMatch(TypedDict, total=False):
-    description: str
-    id: int
-    image_path: str
-    name: str
-    type: str
+    page: int

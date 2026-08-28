@@ -60,42 +60,10 @@ CharacterLoadMatch = Struct.new(
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] age
+# @!attribute [rw] page
 #   @return [Integer, nil]
-#
-# @!attribute [rw] birthdate
-#   @return [String, nil]
-#
-# @!attribute [rw] gender
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] occupation
-#   @return [String, nil]
-#
-# @!attribute [rw] phrases
-#   @return [Array, nil]
-#
-# @!attribute [rw] portrait_path
-#   @return [String, nil]
-#
-# @!attribute [rw] status
-#   @return [String, nil]
 CharacterListMatch = Struct.new(
-  :age,
-  :birthdate,
-  :gender,
-  :id,
-  :name,
-  :occupation,
-  :phrases,
-  :portrait_path,
-  :status,
+  :page,
   keyword_init: true
 )
 
@@ -143,34 +111,10 @@ EpisodeLoadMatch = Struct.new(
 
 # Request payload for Episode#list.
 #
-# @!attribute [rw] air_date
-#   @return [String, nil]
-#
-# @!attribute [rw] episode_number
+# @!attribute [rw] page
 #   @return [Integer, nil]
-#
-# @!attribute [rw] id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] image_path
-#   @return [String, nil]
-#
-# @!attribute [rw] season
-#   @return [Integer, nil]
-#
-# @!attribute [rw] synopsis
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
 EpisodeListMatch = Struct.new(
-  :air_date,
-  :episode_number,
-  :id,
-  :image_path,
-  :season,
-  :synopsis,
-  :title,
+  :page,
   keyword_init: true
 )
 
@@ -210,26 +154,10 @@ LocationLoadMatch = Struct.new(
 
 # Request payload for Location#list.
 #
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] page
 #   @return [Integer, nil]
-#
-# @!attribute [rw] image_path
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] type
-#   @return [String, nil]
 LocationListMatch = Struct.new(
-  :description,
-  :id,
-  :image_path,
-  :name,
-  :type,
+  :page,
   keyword_init: true
 )
 

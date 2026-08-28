@@ -22,15 +22,7 @@ export interface CharacterLoadMatch {
 }
 
 export interface CharacterListMatch {
-  age?: number
-  birthdate?: string
-  gender?: string
-  id?: number
-  name?: string
-  occupation?: string
-  phrases?: any[]
-  portrait_path?: string
-  status?: string
+  page?: number
 }
 
 export interface Episode {
@@ -48,13 +40,7 @@ export interface EpisodeLoadMatch {
 }
 
 export interface EpisodeListMatch {
-  air_date?: string
-  episode_number?: number
-  id?: number
-  image_path?: string
-  season?: number
-  synopsis?: string
-  title?: string
+  page?: number
 }
 
 export interface Location {
@@ -70,10 +56,6 @@ export interface LocationLoadMatch {
 }
 
 export interface LocationListMatch {
-  description?: string
-  id?: number
-  image_path?: string
-  name?: string
-  type?: string
+  page?: number
 }
 
