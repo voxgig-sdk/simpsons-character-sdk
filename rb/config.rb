@@ -51,6 +51,7 @@ module SimpsonsCharacterConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "date",
               "name" => "birthdate",
               "short" => "Birthdate of the character in YYYY-MM-DD format",
               "type" => "`$STRING`",
@@ -93,6 +94,10 @@ module SimpsonsCharacterConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "character",
           "op" => {
             "list" => {
@@ -114,8 +119,10 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/characters",
-                  "parts" => [
-                    "characters",
+                  "segments" => [
+                    {
+                      "lit" => "characters",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -126,6 +133,9 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "characters",
+                  ],
                 },
               ],
             },
@@ -149,9 +159,13 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/characters/{id}",
-                  "parts" => [
-                    "characters",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "characters",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -162,6 +176,10 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "characters",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -173,6 +191,7 @@ module SimpsonsCharacterConfig
         "episode" => {
           "fields" => [
             {
+              "format" => "date",
               "name" => "air_date",
               "short" => "Original air date of the episode",
               "type" => "`$STRING`",
@@ -210,6 +229,10 @@ module SimpsonsCharacterConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "episode",
           "op" => {
             "list" => {
@@ -231,8 +254,10 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episodes",
-                  "parts" => [
-                    "episodes",
+                  "segments" => [
+                    {
+                      "lit" => "episodes",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -243,6 +268,9 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episodes",
+                  ],
                 },
               ],
             },
@@ -265,9 +293,13 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episodes/{id}",
-                  "parts" => [
-                    "episodes",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "episodes",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -278,6 +310,10 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episodes",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -316,6 +352,10 @@ module SimpsonsCharacterConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "location",
           "op" => {
             "list" => {
@@ -337,8 +377,10 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/locations",
-                  "parts" => [
-                    "locations",
+                  "segments" => [
+                    {
+                      "lit" => "locations",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -349,6 +391,9 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "locations",
+                  ],
                 },
               ],
             },
@@ -371,9 +416,13 @@ module SimpsonsCharacterConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/locations/{id}",
-                  "parts" => [
-                    "locations",
-                    "{id}",
+                  "segments" => [
+                    {
+                      "lit" => "locations",
+                    },
+                    {
+                      "var" => "id",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -384,6 +433,10 @@ module SimpsonsCharacterConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "locations",
+                    "{id}",
+                  ],
                 },
               ],
             },

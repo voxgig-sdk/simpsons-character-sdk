@@ -39,6 +39,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date",
             ["name"] = "birthdate",
             ["short"] = "Birthdate of the character in YYYY-MM-DD format",
             ["type"] = "`$STRING`",
@@ -81,6 +82,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "character",
         ["op"] = {
           ["list"] = {
@@ -102,8 +107,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters",
-                ["parts"] = {
-                  "characters",
+                ["segments"] = {
+                  {
+                    ["lit"] = "characters",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -113,6 +120,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "characters",
                 },
               },
             },
@@ -137,9 +147,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters/{id}",
-                ["parts"] = {
-                  "characters",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "characters",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -149,6 +163,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "characters",
+                  "{id}",
                 },
               },
             },
@@ -161,6 +179,7 @@ local function make_config()
       ["episode"] = {
         ["fields"] = {
           {
+            ["format"] = "date",
             ["name"] = "air_date",
             ["short"] = "Original air date of the episode",
             ["type"] = "`$STRING`",
@@ -198,6 +217,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "episode",
         ["op"] = {
           ["list"] = {
@@ -219,8 +242,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes",
-                ["parts"] = {
-                  "episodes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "episodes",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -230,6 +255,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "episodes",
                 },
               },
             },
@@ -253,9 +281,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes/{id}",
-                ["parts"] = {
-                  "episodes",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "episodes",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -265,6 +297,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "episodes",
+                  "{id}",
                 },
               },
             },
@@ -304,6 +340,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
         },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
+        },
         ["name"] = "location",
         ["op"] = {
           ["list"] = {
@@ -325,8 +365,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations",
-                ["parts"] = {
-                  "locations",
+                ["segments"] = {
+                  {
+                    ["lit"] = "locations",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -336,6 +378,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "locations",
                 },
               },
             },
@@ -359,9 +404,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations/{id}",
-                ["parts"] = {
-                  "locations",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "locations",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -371,6 +420,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "locations",
+                  "{id}",
                 },
               },
             },
