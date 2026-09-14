@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character'
+import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character-sdk'
 
 const client = new SimpsonsCharacterSDK()
 ```
@@ -543,7 +543,7 @@ simpsons-character/
 Import the SDK from the package root:
 
 ```ts
-import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character'
+import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character-sdk'
 ```
 
 ### Entity state

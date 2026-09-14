@@ -105,7 +105,7 @@ local results, err = client:Episode():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
+| TypeScript | `@voxgig-sdk/simpsons-character-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
 | Python | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
 | PHP | `voxgig-sdk/simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/simpsons-character-sdk/go` | `go get github.com/voxgig-sdk/simpsons-character-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Episode():list()
 ### TypeScript
 
 ```ts
-import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character'
+import { SimpsonsCharacterSDK } from '@voxgig-sdk/simpsons-character-sdk'
 
 const client = new SimpsonsCharacterSDK()
 
