@@ -4,7 +4,10 @@ declare(strict_types=1);
 // SimpsonsCharacter SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class SimpsonsCharacterFeatures
@@ -14,8 +17,14 @@ class SimpsonsCharacterFeatures
         switch ($name) {
             case "base":
                 return new SimpsonsCharacterBaseFeature();
+            case "ratelimit":
+                return new SimpsonsCharacterRatelimitFeature();
+            case "retry":
+                return new SimpsonsCharacterRetryFeature();
             case "test":
                 return new SimpsonsCharacterTestFeature();
+            case "timeout":
+                return new SimpsonsCharacterTimeoutFeature();
             default:
                 return new SimpsonsCharacterBaseFeature();
         }
@@ -31,7 +40,10 @@ class SimpsonsCharacterFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

@@ -3,28 +3,28 @@
     "episode": {
       "EPISODE00": {
         "air_date": "s46",
-        "episode_number": "s47",
+        "episode_number": 71,
         "id": "EPISODE00",
         "image_path": "s49",
-        "season": "s4a",
+        "season": 74,
         "synopsis": "s4b",
         "title": "s4c"
       },
       "EPISODE01": {
         "air_date": "s8c",
-        "episode_number": "s8d",
+        "episode_number": 141,
         "id": "EPISODE01",
         "image_path": "s8f",
-        "season": "s90",
+        "season": 144,
         "synopsis": "s91",
         "title": "s92"
       },
       "EPISODE02": {
         "air_date": "sd2",
-        "episode_number": "sd3",
+        "episode_number": 211,
         "id": "EPISODE02",
         "image_path": "sd5",
-        "season": "sd6",
+        "season": 214,
         "synopsis": "sd7",
         "title": "sd8"
       }
@@ -34,11 +34,185 @@
     "episode": {
       "episode_ref01": {
         "air_date": "s118",
-        "episode_number": "s119",
+        "episode_number": 281,
         "image_path": "s11b",
-        "season": "s11c",
+        "season": 284,
         "synopsis": "s11d",
         "title": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "GET /episodes": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEpisodes",
+        "parameters": [
+          {
+            "description": "Page number for pagination (20 items per page)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "air_date": {
+                        "description": "Original air date of the episode",
+                        "example": "1989-12-17",
+                        "format": "date",
+                        "type": "string"
+                      },
+                      "episode_number": {
+                        "description": "Episode number within the season",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the episode",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "image_path": {
+                        "description": "Path to the episode image",
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "season": {
+                        "description": "Season number",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "synopsis": {
+                        "description": "Brief synopsis of the episode",
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "title": {
+                        "description": "Title of the episode",
+                        "example": "Simpsons Roasting on an Open Fire",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "title"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response with list of episodes"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /episodes/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEpisodeById",
+        "parameters": [
+          {
+            "description": "Unique identifier of the episode",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "air_date": {
+                      "description": "Original air date of the episode",
+                      "example": "1989-12-17",
+                      "format": "date",
+                      "type": "string"
+                    },
+                    "episode_number": {
+                      "description": "Episode number within the season",
+                      "example": 1,
+                      "type": "integer"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the episode",
+                      "example": 1,
+                      "type": "integer"
+                    },
+                    "image_path": {
+                      "description": "Path to the episode image",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "season": {
+                      "description": "Season number",
+                      "example": 1,
+                      "type": "integer"
+                    },
+                    "synopsis": {
+                      "description": "Brief synopsis of the episode",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Title of the episode",
+                      "example": "Simpsons Roasting on an Open Fire",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with episode details"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "HTTP status code",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Episode not found"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

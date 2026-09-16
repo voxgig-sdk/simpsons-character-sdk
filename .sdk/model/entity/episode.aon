@@ -73,6 +73,12 @@ main: kit: entity: episode: {
               }
             ]
           }
+          contract: {
+            id: "GET /episodes"
+            json: "{\"operationId\":\"getEpisodes\",\"parameters\":[{\"description\":\"Page number for pagination (20 items per page)\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"air_date\":{\"description\":\"Original air date of the episode\",\"example\":\"1989-12-17\",\"format\":\"date\",\"type\":\"string\"},\"episode_number\":{\"description\":\"Episode number within the season\",\"example\":1,\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"example\":1,\"type\":\"integer\"},\"image_path\":{\"description\":\"Path to the episode image\",\"nullable\":true,\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"example\":1,\"type\":\"integer\"},\"synopsis\":{\"description\":\"Brief synopsis of the episode\",\"nullable\":true,\"type\":\"string\"},\"title\":{\"description\":\"Title of the episode\",\"example\":\"Simpsons Roasting on an Open Fire\",\"type\":\"string\"}},\"required\":[\"id\",\"title\"],\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response with list of episodes\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/episodes"
           segments: [
@@ -106,6 +112,12 @@ main: kit: entity: episode: {
                 type: "`$INTEGER`"
               }
             ]
+          }
+          contract: {
+            id: "GET /episodes/{id}"
+            json: "{\"operationId\":\"getEpisodeById\",\"parameters\":[{\"description\":\"Unique identifier of the episode\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"air_date\":{\"description\":\"Original air date of the episode\",\"example\":\"1989-12-17\",\"format\":\"date\",\"type\":\"string\"},\"episode_number\":{\"description\":\"Episode number within the season\",\"example\":1,\"type\":\"integer\"},\"id\":{\"description\":\"Unique identifier for the episode\",\"example\":1,\"type\":\"integer\"},\"image_path\":{\"description\":\"Path to the episode image\",\"nullable\":true,\"type\":\"string\"},\"season\":{\"description\":\"Season number\",\"example\":1,\"type\":\"integer\"},\"synopsis\":{\"description\":\"Brief synopsis of the episode\",\"nullable\":true,\"type\":\"string\"},\"title\":{\"description\":\"Title of the episode\",\"example\":\"Simpsons Roasting on an Open Fire\",\"type\":\"string\"}},\"required\":[\"id\",\"title\"],\"type\":\"object\"}}},\"description\":\"Successful response with episode details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Episode not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/episodes/{id}"

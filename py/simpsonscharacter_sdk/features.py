@@ -1,12 +1,18 @@
 # SimpsonsCharacter SDK feature factory
 
 from simpsonscharacter_sdk.feature.base_feature import SimpsonsCharacterBaseFeature
+from simpsonscharacter_sdk.feature.ratelimit_feature import SimpsonsCharacterRatelimitFeature
+from simpsonscharacter_sdk.feature.retry_feature import SimpsonsCharacterRetryFeature
 from simpsonscharacter_sdk.feature.test_feature import SimpsonsCharacterTestFeature
+from simpsonscharacter_sdk.feature.timeout_feature import SimpsonsCharacterTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: SimpsonsCharacterBaseFeature(),
+    "ratelimit": lambda: SimpsonsCharacterRatelimitFeature(),
+    "retry": lambda: SimpsonsCharacterRetryFeature(),
     "test": lambda: SimpsonsCharacterTestFeature(),
+    "timeout": lambda: SimpsonsCharacterTimeoutFeature(),
 }
 
 

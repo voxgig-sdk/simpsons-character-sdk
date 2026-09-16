@@ -2,7 +2,7 @@
   "existing": {
     "character": {
       "CHARACTER00": {
-        "age": "s5a",
+        "age": 90,
         "birthdate": "s5b",
         "gender": "s5c",
         "id": "CHARACTER00",
@@ -13,7 +13,7 @@
         "status": "s62"
       },
       "CHARACTER01": {
-        "age": "sb4",
+        "age": 180,
         "birthdate": "sb5",
         "gender": "sb6",
         "id": "CHARACTER01",
@@ -24,7 +24,7 @@
         "status": "sbc"
       },
       "CHARACTER02": {
-        "age": "s10e",
+        "age": 270,
         "birthdate": "s10f",
         "gender": "s110",
         "id": "CHARACTER02",
@@ -39,7 +39,7 @@
   "new": {
     "character": {
       "character_ref01": {
-        "age": "s168",
+        "age": 360,
         "birthdate": "s169",
         "gender": "s16a",
         "name": "s16c",
@@ -47,6 +47,285 @@
         "phrases": [],
         "portrait_path": "s16f",
         "status": "s170"
+      }
+    }
+  },
+  "requests": {
+    "GET /characters": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCharacters",
+        "parameters": [
+          {
+            "description": "Page number for pagination (20 items per page)",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "age": 39,
+                    "birthdate": "1956-05-12",
+                    "gender": "Male",
+                    "id": 1,
+                    "name": "Homer Simpson",
+                    "occupation": "Safety Inspector",
+                    "phrases": [
+                      "Doh!",
+                      "Why you little...!",
+                      "Woo-hoo!"
+                    ],
+                    "portrait_path": "/character/1.webp",
+                    "status": "Alive"
+                  }
+                ],
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "age": {
+                        "description": "Age of the character",
+                        "example": 39,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "birthdate": {
+                        "description": "Birthdate of the character in YYYY-MM-DD format",
+                        "example": "1956-05-12",
+                        "format": "date",
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "gender": {
+                        "description": "Gender of the character",
+                        "enum": [
+                          "Male",
+                          "Female",
+                          "Unknown"
+                        ],
+                        "example": "Male",
+                        "type": "string"
+                      },
+                      "id": {
+                        "description": "Unique identifier for the character",
+                        "example": 1,
+                        "type": "integer"
+                      },
+                      "name": {
+                        "description": "Full name of the character",
+                        "example": "Homer Simpson",
+                        "type": "string"
+                      },
+                      "occupation": {
+                        "description": "Occupation or job title of the character",
+                        "example": "Safety Inspector",
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "phrases": {
+                        "description": "Famous quotes and catchphrases of the character",
+                        "example": [
+                          "Doh!",
+                          "Why you little...!",
+                          "Woo-hoo!"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "portrait_path": {
+                        "description": "Path to the character's portrait image (served via CDN)",
+                        "example": "/character/1.webp",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Current status of the character",
+                        "enum": [
+                          "Alive",
+                          "Deceased",
+                          "Unknown"
+                        ],
+                        "example": "Alive",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response with list of characters"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /characters/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCharacterById",
+        "parameters": [
+          {
+            "description": "Unique identifier of the character",
+            "example": 1,
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "age": 39,
+                  "birthdate": "1956-05-12",
+                  "gender": "Male",
+                  "id": 1,
+                  "name": "Homer Simpson",
+                  "occupation": "Safety Inspector",
+                  "phrases": [
+                    "Doh!",
+                    "Why you little...!",
+                    "Woo-hoo!",
+                    "Mmm... (food)... *drooling*",
+                    "Stupid Flanders!",
+                    "Shut up Flanders!",
+                    "AAAAGHH!",
+                    "Lisa, knock off that racket!",
+                    "Uh oh, the boss.",
+                    "Lets all go out for frosty chocolate milkshakes!",
+                    "Whatever, Ill be at Moes.",
+                    "I am evil Ho-mer! I am evil Ho-mer! I am evil Ho-mer!",
+                    "Better them than me.",
+                    "Better them than me... Oh wait, that was me.",
+                    "Marge, my face hurts again!"
+                  ],
+                  "portrait_path": "/character/1.webp",
+                  "status": "Alive"
+                },
+                "schema": {
+                  "properties": {
+                    "age": {
+                      "description": "Age of the character",
+                      "example": 39,
+                      "nullable": true,
+                      "type": "integer"
+                    },
+                    "birthdate": {
+                      "description": "Birthdate of the character in YYYY-MM-DD format",
+                      "example": "1956-05-12",
+                      "format": "date",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "gender": {
+                      "description": "Gender of the character",
+                      "enum": [
+                        "Male",
+                        "Female",
+                        "Unknown"
+                      ],
+                      "example": "Male",
+                      "type": "string"
+                    },
+                    "id": {
+                      "description": "Unique identifier for the character",
+                      "example": 1,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "description": "Full name of the character",
+                      "example": "Homer Simpson",
+                      "type": "string"
+                    },
+                    "occupation": {
+                      "description": "Occupation or job title of the character",
+                      "example": "Safety Inspector",
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "phrases": {
+                      "description": "Famous quotes and catchphrases of the character",
+                      "example": [
+                        "Doh!",
+                        "Why you little...!",
+                        "Woo-hoo!"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "portrait_path": {
+                      "description": "Path to the character's portrait image (served via CDN)",
+                      "example": "/character/1.webp",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Current status of the character",
+                      "enum": [
+                        "Alive",
+                        "Deceased",
+                        "Unknown"
+                      ],
+                      "example": "Alive",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with character details"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "HTTP status code",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Character not found"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

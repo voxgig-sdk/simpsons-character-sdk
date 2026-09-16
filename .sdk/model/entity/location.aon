@@ -60,6 +60,12 @@ main: kit: entity: location: {
               }
             ]
           }
+          contract: {
+            id: "GET /locations"
+            json: "{\"operationId\":\"getLocations\",\"parameters\":[{\"description\":\"Page number for pagination (20 items per page)\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":1,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"nullable\":true,\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"example\":1,\"type\":\"integer\"},\"image_path\":{\"description\":\"Path to the location image\",\"nullable\":true,\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"example\":\"742 Evergreen Terrace\",\"type\":\"string\"},\"type\":{\"description\":\"Type of location (home, business, landmark, etc.)\",\"example\":\"Home\",\"nullable\":true,\"type\":\"string\"}},\"required\":[\"id\",\"name\"],\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response with list of locations\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/locations"
           segments: [
@@ -93,6 +99,12 @@ main: kit: entity: location: {
                 type: "`$INTEGER`"
               }
             ]
+          }
+          contract: {
+            id: "GET /locations/{id}"
+            json: "{\"operationId\":\"getLocationById\",\"parameters\":[{\"description\":\"Unique identifier of the location\",\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"description\":{\"description\":\"Description of the location\",\"nullable\":true,\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the location\",\"example\":1,\"type\":\"integer\"},\"image_path\":{\"description\":\"Path to the location image\",\"nullable\":true,\"type\":\"string\"},\"name\":{\"description\":\"Name of the location\",\"example\":\"742 Evergreen Terrace\",\"type\":\"string\"},\"type\":{\"description\":\"Type of location (home, business, landmark, etc.)\",\"example\":\"Home\",\"nullable\":true,\"type\":\"string\"}},\"required\":[\"id\",\"name\"],\"type\":\"object\"}}},\"description\":\"Successful response with location details\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Location not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/locations/{id}"
