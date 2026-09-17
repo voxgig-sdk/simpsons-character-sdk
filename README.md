@@ -105,12 +105,12 @@ local results, err = client:Episode():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/simpsons-character-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
-| Python | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
-| PHP | `voxgig-sdk/simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
+| TypeScript | `@voxgig-sdk/simpsons-character-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/tags) |
+| Python | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/tags) |
+| PHP | `voxgig-sdk/simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/simpsons-character-sdk/go` | `go get github.com/voxgig-sdk/simpsons-character-sdk/go@latest` |
-| Ruby | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
-| Lua | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/releases) |
+| Ruby | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/tags) |
+| Lua | `voxgig-sdk-simpsons-character` | publish pending — [install from git tag](https://github.com/voxgig-sdk/simpsons-character-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/simpsons-character-sdk/go-cli` | `go install github.com/voxgig-sdk/simpsons-character-sdk/go-cli/cmd/simpsons-character@latest` |
 | Go MCP server | `github.com/voxgig-sdk/simpsons-character-sdk/go-mcp` | `go get github.com/voxgig-sdk/simpsons-character-sdk/go-mcp@latest` |
 
