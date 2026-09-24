@@ -89,51 +89,60 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "age",
-            ["short"] = "Age of the character",
+            ["title"] = "Age",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Age of the character",
           },
           {
-            ["format"] = "date",
             ["name"] = "birthdate",
-            ["short"] = "Birthdate of the character in YYYY-MM-DD format",
+            ["title"] = "Birthdate",
             ["type"] = "`$STRING`",
+            ["short"] = "Birthdate of the character in YYYY-MM-DD format",
+            ["format"] = "date",
           },
           {
             ["name"] = "gender",
-            ["short"] = "Gender of the character",
+            ["title"] = "Gender",
             ["type"] = "`$STRING`",
+            ["short"] = "Gender of the character",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$INTEGER`",
             ["req"] = true,
             ["short"] = "Unique identifier for the character",
-            ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Full name of the character",
-            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "occupation",
-            ["short"] = "Occupation or job title of the character",
+            ["title"] = "Occupation",
             ["type"] = "`$STRING`",
+            ["short"] = "Occupation or job title of the character",
           },
           {
             ["name"] = "phrases",
-            ["short"] = "Famous quotes and catchphrases of the character",
+            ["title"] = "Phrases",
             ["type"] = "`$ARRAY`",
+            ["short"] = "Famous quotes and catchphrases of the character",
           },
           {
             ["name"] = "portrait_path",
-            ["short"] = "Path to the character's portrait image (served via CDN)",
+            ["title"] = "Portrait Path",
             ["type"] = "`$STRING`",
+            ["short"] = "Path to the character's portrait image (served via CDN)",
           },
           {
             ["name"] = "status",
-            ["short"] = "Current status of the character",
+            ["title"] = "Status",
             ["type"] = "`$STRING`",
+            ["short"] = "Current status of the character",
           },
         },
         ["id"] = {
@@ -147,17 +156,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "query",
-                      ["name"] = "page",
-                      ["orig"] = "page",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters",
@@ -166,17 +164,29 @@ local function make_config()
                     ["lit"] = "characters",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "page",
-                  },
+                ["parts"] = {
+                  "characters",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "characters",
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "page",
+                  },
                 },
               },
             },
@@ -186,18 +196,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/characters/{id}",
@@ -209,18 +207,31 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
+                ["parts"] = {
+                  "characters",
+                  "{id}",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "characters",
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = 1,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
@@ -233,42 +244,49 @@ local function make_config()
       ["episode"] = {
         ["fields"] = {
           {
-            ["format"] = "date",
             ["name"] = "air_date",
-            ["short"] = "Original air date of the episode",
+            ["title"] = "Air Date",
             ["type"] = "`$STRING`",
+            ["short"] = "Original air date of the episode",
+            ["format"] = "date",
           },
           {
             ["name"] = "episode_number",
-            ["short"] = "Episode number within the season",
+            ["title"] = "Episode Number",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Episode number within the season",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$INTEGER`",
             ["req"] = true,
             ["short"] = "Unique identifier for the episode",
-            ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "image_path",
-            ["short"] = "Path to the episode image",
+            ["title"] = "Image Path",
             ["type"] = "`$STRING`",
+            ["short"] = "Path to the episode image",
           },
           {
             ["name"] = "season",
-            ["short"] = "Season number",
+            ["title"] = "Season",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Season number",
           },
           {
             ["name"] = "synopsis",
-            ["short"] = "Brief synopsis of the episode",
+            ["title"] = "Synopsis",
             ["type"] = "`$STRING`",
+            ["short"] = "Brief synopsis of the episode",
           },
           {
             ["name"] = "title",
+            ["title"] = "Title",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Title of the episode",
-            ["type"] = "`$STRING`",
           },
         },
         ["id"] = {
@@ -282,17 +300,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "query",
-                      ["name"] = "page",
-                      ["orig"] = "page",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes",
@@ -301,17 +308,29 @@ local function make_config()
                     ["lit"] = "episodes",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "page",
-                  },
+                ["parts"] = {
+                  "episodes",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "episodes",
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "page",
+                  },
                 },
               },
             },
@@ -321,17 +340,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episodes/{id}",
@@ -343,18 +351,30 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
+                ["parts"] = {
+                  "episodes",
+                  "{id}",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "episodes",
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
@@ -368,30 +388,35 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "description",
-            ["short"] = "Description of the location",
+            ["title"] = "Description",
             ["type"] = "`$STRING`",
+            ["short"] = "Description of the location",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$INTEGER`",
             ["req"] = true,
             ["short"] = "Unique identifier for the location",
-            ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "image_path",
-            ["short"] = "Path to the location image",
+            ["title"] = "Image Path",
             ["type"] = "`$STRING`",
+            ["short"] = "Path to the location image",
           },
           {
             ["name"] = "name",
+            ["title"] = "Name",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Name of the location",
-            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
-            ["short"] = "Type of location (home, business, landmark, etc.)",
+            ["title"] = "Type",
             ["type"] = "`$STRING`",
+            ["short"] = "Type of location (home, business, landmark, etc.)",
           },
         },
         ["id"] = {
@@ -405,17 +430,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["example"] = 1,
-                      ["kind"] = "query",
-                      ["name"] = "page",
-                      ["orig"] = "page",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations",
@@ -424,17 +438,29 @@ local function make_config()
                     ["lit"] = "locations",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "page",
-                  },
+                ["parts"] = {
+                  "locations",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "locations",
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "page",
+                      ["orig"] = "page",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 1,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "page",
+                  },
                 },
               },
             },
@@ -444,17 +470,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/locations/{id}",
@@ -466,18 +481,30 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
+                ["parts"] = {
+                  "locations",
+                  "{id}",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "locations",
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },

@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -145,51 +138,60 @@ class Config {
       "fields": [
         {
           "name": "age",
-          "short": "Age of the character",
-          "type": "`$INTEGER`"
+          "title": "Age",
+          "type": "`$INTEGER`",
+          "short": "Age of the character"
         },
         {
-          "format": "date",
           "name": "birthdate",
+          "title": "Birthdate",
+          "type": "`$STRING`",
           "short": "Birthdate of the character in YYYY-MM-DD format",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "gender",
-          "short": "Gender of the character",
-          "type": "`$STRING`"
+          "title": "Gender",
+          "type": "`$STRING`",
+          "short": "Gender of the character"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Unique identifier for the character",
-          "type": "`$INTEGER`"
+          "short": "Unique identifier for the character"
         },
         {
           "name": "name",
+          "title": "Name",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Full name of the character",
-          "type": "`$STRING`"
+          "short": "Full name of the character"
         },
         {
           "name": "occupation",
-          "short": "Occupation or job title of the character",
-          "type": "`$STRING`"
+          "title": "Occupation",
+          "type": "`$STRING`",
+          "short": "Occupation or job title of the character"
         },
         {
           "name": "phrases",
-          "short": "Famous quotes and catchphrases of the character",
-          "type": "`$ARRAY`"
+          "title": "Phrases",
+          "type": "`$ARRAY`",
+          "short": "Famous quotes and catchphrases of the character"
         },
         {
           "name": "portrait_path",
-          "short": "Path to the character's portrait image (served via CDN)",
-          "type": "`$STRING`"
+          "title": "Portrait Path",
+          "type": "`$STRING`",
+          "short": "Path to the character's portrait image (served via CDN)"
         },
         {
           "name": "status",
-          "short": "Current status of the character",
-          "type": "`$STRING`"
+          "title": "Status",
+          "type": "`$STRING`",
+          "short": "Current status of the character"
         }
       ],
       "id": {
@@ -203,17 +205,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 1,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/characters",
@@ -222,18 +213,30 @@ class Config {
                   "lit": "characters"
                 }
               ],
-              "select": {
-                "exist": [
-                  "page"
-                ]
-              },
+              "parts": [
+                "characters"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "characters"
-              ]
+              "args": {
+                "query": [
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "page"
+                ]
+              }
             }
           ]
         },
@@ -242,18 +245,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "example": 1,
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}",
@@ -265,19 +256,32 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
+              "parts": [
+                "characters",
+                "{id}"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "characters",
-                "{id}"
-              ]
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$INTEGER`",
+                    "kind": "param",
+                    "reqd": true,
+                    "example": 1
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }
@@ -289,42 +293,49 @@ class Config {
     "episode": {
       "fields": [
         {
-          "format": "date",
           "name": "air_date",
+          "title": "Air Date",
+          "type": "`$STRING`",
           "short": "Original air date of the episode",
-          "type": "`$STRING`"
+          "format": "date"
         },
         {
           "name": "episode_number",
-          "short": "Episode number within the season",
-          "type": "`$INTEGER`"
+          "title": "Episode Number",
+          "type": "`$INTEGER`",
+          "short": "Episode number within the season"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Unique identifier for the episode",
-          "type": "`$INTEGER`"
+          "short": "Unique identifier for the episode"
         },
         {
           "name": "image_path",
-          "short": "Path to the episode image",
-          "type": "`$STRING`"
+          "title": "Image Path",
+          "type": "`$STRING`",
+          "short": "Path to the episode image"
         },
         {
           "name": "season",
-          "short": "Season number",
-          "type": "`$INTEGER`"
+          "title": "Season",
+          "type": "`$INTEGER`",
+          "short": "Season number"
         },
         {
           "name": "synopsis",
-          "short": "Brief synopsis of the episode",
-          "type": "`$STRING`"
+          "title": "Synopsis",
+          "type": "`$STRING`",
+          "short": "Brief synopsis of the episode"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Title of the episode",
-          "type": "`$STRING`"
+          "short": "Title of the episode"
         }
       ],
       "id": {
@@ -338,17 +349,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 1,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/episodes",
@@ -357,18 +357,30 @@ class Config {
                   "lit": "episodes"
                 }
               ],
-              "select": {
-                "exist": [
-                  "page"
-                ]
-              },
+              "parts": [
+                "episodes"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "episodes"
-              ]
+              "args": {
+                "query": [
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "page"
+                ]
+              }
             }
           ]
         },
@@ -377,17 +389,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/episodes/{id}",
@@ -399,19 +400,31 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
+              "parts": [
+                "episodes",
+                "{id}"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "episodes",
-                "{id}"
-              ]
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$INTEGER`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }
@@ -424,30 +437,35 @@ class Config {
       "fields": [
         {
           "name": "description",
-          "short": "Description of the location",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Description of the location"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "short": "Unique identifier for the location",
-          "type": "`$INTEGER`"
+          "short": "Unique identifier for the location"
         },
         {
           "name": "image_path",
-          "short": "Path to the location image",
-          "type": "`$STRING`"
+          "title": "Image Path",
+          "type": "`$STRING`",
+          "short": "Path to the location image"
         },
         {
           "name": "name",
+          "title": "Name",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Name of the location",
-          "type": "`$STRING`"
+          "short": "Name of the location"
         },
         {
           "name": "type",
-          "short": "Type of location (home, business, landmark, etc.)",
-          "type": "`$STRING`"
+          "title": "Type",
+          "type": "`$STRING`",
+          "short": "Type of location (home, business, landmark, etc.)"
         }
       ],
       "id": {
@@ -461,17 +479,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 1,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/locations",
@@ -480,18 +487,30 @@ class Config {
                   "lit": "locations"
                 }
               ],
-              "select": {
-                "exist": [
-                  "page"
-                ]
-              },
+              "parts": [
+                "locations"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "locations"
-              ]
+              "args": {
+                "query": [
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 1
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "page"
+                ]
+              }
             }
           ]
         },
@@ -500,17 +519,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "id",
-                    "reqd": true,
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/locations/{id}",
@@ -522,19 +530,31 @@ class Config {
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
+              "parts": [
+                "locations",
+                "{id}"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "locations",
-                "{id}"
-              ]
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "id",
+                    "type": "`$INTEGER`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }

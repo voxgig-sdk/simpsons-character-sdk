@@ -1,7 +1,7 @@
 // Typed models for the SimpsonsCharacter SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,15 +14,6 @@ import (
 
 // Character is the typed data model for the character entity.
 type Character struct {
-	Age *int `json:"age,omitempty"`
-	Birthdate *string `json:"birthdate,omitempty"`
-	Gender *string `json:"gender,omitempty"`
-	Id int `json:"id"`
-	Name string `json:"name"`
-	Occupation *string `json:"occupation,omitempty"`
-	Phrases *[]any `json:"phrases,omitempty"`
-	PortraitPath *string `json:"portrait_path,omitempty"`
-	Status *string `json:"status,omitempty"`
 }
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
@@ -37,13 +28,6 @@ type CharacterListMatch struct {
 
 // Episode is the typed data model for the episode entity.
 type Episode struct {
-	AirDate *string `json:"air_date,omitempty"`
-	EpisodeNumber *int `json:"episode_number,omitempty"`
-	Id int `json:"id"`
-	ImagePath *string `json:"image_path,omitempty"`
-	Season *int `json:"season,omitempty"`
-	Synopsis *string `json:"synopsis,omitempty"`
-	Title string `json:"title"`
 }
 
 // EpisodeLoadMatch is the typed request payload for Episode.LoadTyped.
@@ -58,11 +42,6 @@ type EpisodeListMatch struct {
 
 // Location is the typed data model for the location entity.
 type Location struct {
-	Description *string `json:"description,omitempty"`
-	Id int `json:"id"`
-	ImagePath *string `json:"image_path,omitempty"`
-	Name string `json:"name"`
-	Type *string `json:"type,omitempty"`
 }
 
 // LocationLoadMatch is the typed request payload for Location.LoadTyped.

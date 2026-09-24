@@ -1,0 +1,153 @@
+# Entity: episode
+
+main: kit: entity: episode: {
+
+  alias: field: {}
+
+  fields: {
+    air_date: {
+      fo: "date"
+      h: "Air Date"
+      n: "air_date"
+      r: false
+      sh: "Original air date of the episode"
+      t: "`$STRING`"
+    }
+    episode_number: {
+      h: "Episode Number"
+      n: "episode_number"
+      r: false
+      sh: "Episode number within the season"
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the episode"
+      t: "`$INTEGER`"
+    }
+    image_path: {
+      h: "Image Path"
+      n: "image_path"
+      r: false
+      sh: "Path to the episode image"
+      t: "`$STRING`"
+    }
+    season: {
+      h: "Season"
+      n: "season"
+      r: false
+      sh: "Season number"
+      t: "`$INTEGER`"
+    }
+    synopsis: {
+      h: "Synopsis"
+      n: "synopsis"
+      r: false
+      sh: "Brief synopsis of the episode"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Title of the episode"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "episode"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /episodes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/episodes"
+          q: {
+            exist: [
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "episodes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /episodes/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/episodes/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "episodes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
