@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 SimpsonsCharacterUtility::setRegistrar(function (SimpsonsCharacterUtility $u): void {
     $u->clean = [SimpsonsCharacterClean::class, 'call'];
+    $u->clean_add = [SimpsonsCharacterClean::class, 'add'];
+    $u->clean_explain = [SimpsonsCharacterDone::class, 'clean_explain'];
     $u->done = [SimpsonsCharacterDone::class, 'call'];
     $u->make_error = [SimpsonsCharacterMakeError::class, 'call'];
     $u->feature_add = [SimpsonsCharacterFeatureAdd::class, 'call'];

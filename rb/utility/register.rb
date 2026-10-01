@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 SimpsonsCharacterUtility.registrar = ->(u) {
   u.clean = SimpsonsCharacterUtilities::Clean
+  u.clean_add = SimpsonsCharacterUtilities::CleanAdd
+  u.clean_explain = SimpsonsCharacterUtilities::CleanExplain
   u.done = SimpsonsCharacterUtilities::Done
   u.make_error = SimpsonsCharacterUtilities::MakeError
   u.feature_add = SimpsonsCharacterUtilities::FeatureAdd

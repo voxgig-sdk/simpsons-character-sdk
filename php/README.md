@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/simpsons-character-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/simpsons-character-sdk/releases](https://github.com/voxgig-sdk/simpsons-character-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/simpsons-character-sdk
+composer config repositories.simpsons-character-sdk path ./simpsons-character-sdk/php
+composer require voxgig-sdk/simpsons-character-sdk:@dev
+```
 
 
 ## Tutorial: your first API call
