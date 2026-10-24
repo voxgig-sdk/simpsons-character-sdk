@@ -101,10 +101,9 @@ main: kit: entity: character: {
           }
           m: "GET"
           o: "/characters"
-          q: {
-            exist: [
-              "page"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -145,6 +144,10 @@ main: kit: entity: character: {
             exist: [
               "id"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

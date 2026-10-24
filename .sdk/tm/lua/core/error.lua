@@ -18,6 +18,7 @@ function SimpsonsCharacterError.new(code, msg, ctx)
   self.msg = msg or ""
   self.result = nil
   self.spec = nil
+  self.status = -1
   CONTEXT[self] = ctx
   return self
 end
@@ -30,6 +31,11 @@ end
 
 function SimpsonsCharacterError:error()
   return self.msg
+end
+
+
+function SimpsonsCharacterError:not_found()
+  return 404 == self.status
 end
 
 

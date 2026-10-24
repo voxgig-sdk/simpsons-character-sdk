@@ -16,11 +16,21 @@ const PLAN = [
         "path": "/characters",
         "args": [],
         "select": {
-            "page": "v1"
+            "page": 1
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "page"
+        ],
+        "queryArgs": [
+            {
+                "name": "page",
+                "wire": "page"
+            }
         ],
         "auth": null,
         "status": 200,
@@ -58,7 +68,12 @@ const PLAN = [
         ],
         "select": {},
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [],
+        "queryArgs": [],
         "auth": null,
         "status": 200,
         "sample": {
@@ -86,11 +101,21 @@ const PLAN = [
         "path": "/episodes",
         "args": [],
         "select": {
-            "page": "v1"
+            "page": 1
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "page"
+        ],
+        "queryArgs": [
+            {
+                "name": "page",
+                "wire": "page"
+            }
         ],
         "auth": null,
         "status": 200,
@@ -122,7 +147,12 @@ const PLAN = [
         ],
         "select": {},
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [],
+        "queryArgs": [],
         "auth": null,
         "status": 200,
         "sample": {
@@ -144,11 +174,21 @@ const PLAN = [
         "path": "/locations",
         "args": [],
         "select": {
-            "page": "v1"
+            "page": 1
         },
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [
             "page"
+        ],
+        "queryArgs": [
+            {
+                "name": "page",
+                "wire": "page"
+            }
         ],
         "auth": null,
         "status": 200,
@@ -178,7 +218,12 @@ const PLAN = [
         ],
         "select": {},
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [],
+        "queryArgs": [],
         "auth": null,
         "status": 200,
         "sample": {
